@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <title>Bootstrap Tutorial Sample Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<style>
+	  table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	  }
+
+	td, th {
+	   border: 1px solid #dddddd;
+	   text-align: left;
+	   padding: 8px;
+	}
+
+	tr:nth-child(even) {
+	   background-color: #dddddd;
+	}
+	.header {
+
+	color: #fff;
+		background: #4b5366;		
+		}
+	body{
+		back-ground-color: grey;
+	}
+	#demo{
+		float:right
+	}
+
+
+	</style>
+  </head>
+  
+<body>
+	<div class="container">
+<tr> <th> <h1 font-size="500"><b>Order History </b> </h1> </th> </tr>
+<span> Entries </span>
+<select class="selectpicker">
+  <option>5</option>
+  <option>10</option>
+  <option>15</option>
+  <option> 20</option>
+</select>
+<div id= "demo">
+	<object align="right>
+		<div class="active-cyan-3 active-cyan-4 mb-4">
+			<input class="form-control" type="text" placeholder="Search" aria-label="Search" style="width: 150px">
+		</div>
+	</object>
+</div>
+				<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#Id </th>
+      <th scope="col" ></i> Title <i class="fas fa-sort text-right"> </th>
+      <th scope="col" ></i> Date <i class="fas fa-sort text-right"></th>
+      <th scope="col">Quantity</th>
+	  <th scope="col"> Price </th>
+	  <th scope="col">  </th>
+	  <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">73212</th>
+      <td>Harry Potter</td>
+      <td>10/21/2017</td>
+      <td>1</td>
+	  <td>$10.11</td>
+      <td> <button type="button" class="btn btn-primary">Reorder</button> </td>
+	  <td> <button type="button" class="btn btn-danger">Return</button></td>
+    </tr>
+    <tr>
+      <th scope="row">74221</th>
+      <td>How to train your Dog</td>
+      <td>10/11/2017</td>
+      <td>1</td>
+	  <td>$12.12</td>
+      <td> <button type="button" class="btn btn-primary">Reorder</button> </td>
+	  <td> <button type="button" class="btn btn-danger">Return</button></td>
+    </tr>
+    <tr>
+      <th scope="row">76231</th>
+      <td>How to be a Man</td>
+      <td>9/11/2017</td>
+      <td>1</td>
+	  <td>$5.32</td>
+      <td> <button type="button" class="btn btn-primary">Reorder</button> </td>
+	  <td> <button type="button" class="btn btn-danger">Return</button></td>
+    </tr>
+	<tr>
+      <th scope="row">78211</th>
+      <td>21 ways to get a Girlfriend</td>
+      <td>9/05/2017</td>
+      <td>1</td>
+	  <td>$7.21</td>
+      <td> <button type="button" class="btn btn-primary">Reorder</button> </td>
+	  <td> <button type="button" class="btn btn-danger">Return</button></td>
+    </tr>
+    <tr>
+      <th scope="row">79212</th>
+	  <td>Too lazy to get new title</td>
+      <td>8/27/2017</td>
+      <td>1</td>
+	  <td>$11.11</td>
+      <td> <button type="button" class="btn btn-primary">Reorder</button> </td>
+	  <td> <button type="button" class="btn btn-danger">Return</button></td>
+    </tr>
+	   <tr>
+      <th scope="row">79212</th>
+	  <td>Too lazy to get new title</td>
+      <td>8/27/2017</td>
+      <td>1</td>
+	  <td>$11.11</td>
+      <td> <button type="button" class="btn btn-primary">Reorder</button> </td>
+	  <td> <button type="button" class="btn btn-danger">Return</button></td>
+    </tr>
+	   <tr>
+      <th scope="row">79212</th>
+	  <td>Too lazy to get new title</td>
+      <td>8/27/2017</td>
+      <td>1</td>
+	  <td>$11.11</td>
+      <td> <button type="button" class="btn btn-primary">Reorder</button> </td>
+	  <td> <button type="button" class="btn btn-danger">Return</button></td>
+    </tr>
+	   <tr>
+      <th scope="row">79212</th>
+	  <td>Too lazy to get new title</td>
+      <td>8/27/2017</td>
+      <td>1</td>
+	  <td>$11.11</td>
+      <td> <button type="button" class="btn btn-primary">Reorder</button> </td>
+	  <td> <button type="button" class="btn btn-danger">Return</button></td>
+    </tr>
+  </tbody>
+</table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+	</div>
+</body>
