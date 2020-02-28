@@ -1,0 +1,284 @@
+<html><head>
+        <title>BookIt!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link href="StyleSheet.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	 <script src="https://kit.fontawesome.com/a97b8a9b0d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>  
+         <style type="text/css">
+            
+body{
+    width: 100%;
+    background: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);
+     background-repeat: no-repeat;
+   background-size: 100% 100%;
+   
+}
+
+#bottom{color: black;
+  font-style: italic;
+  font-size:small;
+  text-align: center;}
+    h3, p{
+    font-weight: bold;
+    text-shadow: 8px 8px 8px black;
+    color:yellow;
+            }
+
+h1{
+    font-weight: 700;
+    font-size: 5em;
+    transform: translate(-50%, -55%);
+     left: 50%;
+  position: absolute;
+    
+     text-align: center;
+    text-shadow: 2px 2px 4px red;
+    color:white;
+}
+
+
+
+.responsive-iframe-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+
+.responsive-iframe-container iframe,
+.vresponsive-iframe-container object,
+.vresponsive-iframe-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+ .overlay {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+          .item{
+text-align:center;
+}
+.carousel-inner img{
+display:inline-block  !important;
+}
+            
+
+            
+    @media (min-width: 768px) {
+         .navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+    float:none;
+             pointer-events: none;
+            }      
+#searchbar{
+    min-width: 600px;
+        }
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+        
+        ul{
+           width: 100%;
+            
+        }      
+        .row{
+            margin-top: 100px;
+        }
+        
+       
+}
+    
+#slides{
+            margin-top: 100px;
+        }
+
+
+</style>
+    
+		</head>
+    <body>         
+     
+        
+                  
+      <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+   <div class="container-fluid">
+       <div class="navbar-header">
+          <a style="color: white; font-size: 4rem; font-family: cursive; font-weight: bold;"class="navbar-brand" >BookIt!</a>
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button></div>
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 <ul class="nav navbar-nav">
+                <li  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <form class="navbar-form" role="search">
+        <div  class="input-group">
+            <input id="searchbar"type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+                <button style="height: 34px" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+        </li>
+              
+             <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12"  class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><a href="#">About </a></li>
+              <li id="section" class="dropdown col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><a href="#viewProfile">View Profile</a></li>
+           <li>
+    <a data-target="#myModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" 
+       href="#myModal">Edit Profile<span class="caret"></span></a>
+</li> 
+               <li ><a href="#signOut">Sign Out</a></li>
+        </ul></li>
+             
+              <li class="dropdown col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Orders <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li ><a href="#checkout">Checkout</a></li>
+            <li ><a href="#history">Order History</a></li>
+             <li ><a href="#history">View Cart</a></li>
+            </ul></li>
+        </ul>
+    
+        </div>
+        </div>
+        </nav>
+<div class="overlay">
+        <div style="min-height: 110%" class="container">
+            
+           
+            
+          <div class="row">
+              
+              <div style="padding-top: 130px"class="col-lg-12 col-md-12 col-sm-12  col-xs-12 align-self-center">
+        <h1>Welcome!</h1>
+                  </div>
+                  
+       </div>
+             
+        <div id="slides" class="row">
+        <div class="col-lg-12 col-md-12  col-sm-12  col-xs-12">
+       <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <div style=""class="carousel-inner">
+    <div class="item active">
+      <img src="https://i.ibb.co/Yc3QnNW/rsz-newrel.jpg" >
+      <div class="carousel-caption">
+        <h3>Newest Releases</h3>
+        <p>Check out the newsest books that we have to offer!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://st.depositphotos.com/1006472/3197/i/450/depositphotos_31975003-stock-photo-twenty-percent-off.jpg" >
+      <div class="carousel-caption">
+        <h3>Register Today</h3>
+        <p>When you enroll today, enjoy 20% off on your first book!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://i.ibb.co/hBCQjPN/rsz-best-selling-books-of-2019-you-won-t-want-to-miss-1575408329.png">
+      <div class="carousel-caption">
+        <h3>Best Seller</h3>
+        <p>Check out our best selling books from our website!</p>
+      </div>
+    </div>
+  </div>
+
+ 
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+        </div>
+            
+        </div>
+        </div>
+     
+</div>
+          <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div style="text-align:center;"class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 style="color:black"class="modal-title">Edit Profile  <i style="padding: 5px;"class="glyphicon glyphicon-pencil"></i></h4>
+        </div>
+        <div class="modal-body">
+            <ul style="list-style-type:none">
+              <li><a href="#changepass">Change Password</a></li>
+                <li><a href="#personalinfo">Personal Info</a></li>
+                <li><a href="#addinfo">Address Info</a></li>
+                 <li><a href="#payinfo">Payment Info</a></li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" style="align-items: center; background-color: lightblue; color: white;" data-dismiss="modal" class="btn btn-default" >Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+        <footer >
+  <div style="background-color: #f2f2f2; text-align: center; padding-bottom: "class="container-fluid">
+
+<i style="color:#3b5998; padding-right: 35px;"class="fab fa-facebook-square fa-2x"></i>
+<i style="color:#38A1F3; padding-right: 35px;"class="fab fa-twitter-square fa-2x"></i>
+<i style="color:#fb3958"class="fab fa-instagram-square fa-2x"></i>
+        
+<div id="bottom">
+ © 2020 Copyright: BookIt.com
+    </div>
+</div>
+ 
+</footer>
+    
+           <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script> <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>     
+    
+<script>
+
+        $("#click").onclick(function(e){
+    $('#myModal').modal('show');
+    return false;
+});
+   
+        </script>
+        
+</body></html>
