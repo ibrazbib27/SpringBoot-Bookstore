@@ -101,12 +101,17 @@ display:inline-block  !important;
             
 
              @media(max-width: 768px){
+                 #advsearch{
+                     width:100%;
+                 }
                  body { padding-top: 30px; }
                   .row{padding: 50px;}
              }
             
 @media (min-width: 768px) {
-   
+    #advsearch{
+                     font-size: 10px;
+                 }
     .dropdown-menu{
         width: 100%;
     }
@@ -137,7 +142,7 @@ display:inline-block  !important;
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: #999;
 }
-                  }
+                  
             #register{
                
                 width: 70%;
@@ -199,7 +204,7 @@ display:inline-block  !important;
   </div>
 </div>
   
-          <a style="margin-left: 10px; align-content: center; color:white;"  data-target="#filterSearch" data-toggle="modal" ><small>Advanced Search  <i class="fas fa-search-plus"></i></small></a>
+          <a style="margin-left: 10px; align-content: center; color:white;"  id="advsearch" data-target="#filterSearch" data-toggle="modal" ><small>Advanced Search  <i class="fas fa-search-plus"></i></small></a>
         
           </form>
       </li>
@@ -208,7 +213,7 @@ display:inline-block  !important;
 
     <ul class="navbar-nav justify-content-center nav-fill w-100  px-3">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="https://ibrazbib27.github.io/cs4050/home.html">Home</a>
       </li>
      <li class="nav-item ">
         <a class="nav-link" href="#">About</a>
@@ -707,9 +712,9 @@ display:inline-block  !important;
                      </div>
            
         </div>
-        <div class="modal-footer justify-content-between">
-          <button id="submitModal"  type="submit" form="apply" style="align-items: center; background-color: #4BB543; color: white; "  class="btn btn-default" >Search</button>
-             <button type="button" style="align-items: center; background-color: red; color: white;" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal-footer justify-content-between" style="text-align:center;">
+          <button id="submitModal"  type="submit" form="apply" style="margin:auto;display:block; background-color: #4BB543; color: white; "  class="btn btn-default" >Search</button>
+             <button type="button" style="margin:auto;display:block; background-color: red; color: white;" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       
@@ -721,16 +726,16 @@ display:inline-block  !important;
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-             <h4 class='col-12 modal-title text-center' style="color: #4BB543;">
+             <h5 class='col-12 modal-title text-center' style="color: #4BB543;">
               Registration is Complete  <i class="far fa-check-square"></i>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-         </h4>
+         </h5>
         </div>
         <div class="modal-body">
           Congragulation on successfully completing the registration process for BookIt! To login into your new account click on the "Login" button below!
         </div>
-        <div class="modal-footer justify-content-between" >
-          <button id="accComplete"  type="button" onclick="window.open('https://ibrazbib27.github.io/cs4050/home.html','_self')" style="align-items: center; background-color: #4BB543; color: white;"  class="btn btn-default" >Login</button>
+        <div class="modal-footer" style="text-align:center;" >
+          <button id="accComplete"  type="button" onclick="window.open('https://ibrazbib27.github.io/cs4050/home.html','_self')" style="margin:auto;display:block; background-color: #4BB543; color: white;"  class="btn btn-default" >Login</button>
         </div>
       </div>
       
