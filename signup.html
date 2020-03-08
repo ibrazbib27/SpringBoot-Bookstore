@@ -1,3 +1,4 @@
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -105,10 +106,14 @@ display:inline-block  !important;
                      width:100%;
                  }
                  body { padding-top: 30px; }
-                  .row{padding: 50px;}
+                 
 		     #bootnavbar{
  overflow-y: scroll !important;
 max-height: 210px !important;
+}	
+                  .jumbotron{
+ overflow-y: scroll !important;
+max-height: 350px !important;
 }	
              }
             
@@ -120,7 +125,7 @@ max-height: 210px !important;
         width: 100%;
     }
     body { padding-top: 200px; } 
-     .row{padding: 50px;}
+    
 }
  .form-inline{
   width: 100%;
@@ -170,8 +175,12 @@ max-height: 210px !important;
     display: inline-block;
 }
              label{
-                 color:white;
+                 color:black;
              }
+ .required:after {
+    content:" *";
+    color: red;
+  }
 </style>
     
 		</head>
@@ -249,21 +258,14 @@ max-height: 210px !important;
             
            
             
-          <div class="row">
-              
-              <div class="col col-12 align-self-center">
+         
         <h1 >Create a New Account</h1>
-                  </div>
-                  
-       </div>
-             
+            <div class="jumbotron" >      
+      
         <div class="row">
           <div class="col col-12 align-self-center">
        <form id="register" data-toggle="validator" role="form"  class="justify-content-center w-100">
-            
- 
-        <a href="https://ibrazbib27.github.io/cs4050/home.html"><small style="color:white;text-align: center;">Already Have an Account?</small></a>
-   
+           <small style="color:red">*</small> <small>Indicates a required field</small>
            <div class="form-row">
                <div class="form-group col col-xs-12">
                    <h3 >User Information</h3>
@@ -271,41 +273,26 @@ max-height: 210px !important;
                </div></div>   
     <div class="form-row">
     <div class="form-group col-12 col-xl-7 col-lg-7 col-md-7 col-sm-12">
-    <label for="fName" >First Name</label>
+    <label for="fName"  class="required">First Name </label>
       <input type="text" class="form-control" placeholder="e.g. John" id="fName" required>
-         <div id="help-block" class="help-block">
-       required
-      </div>
     </div>
     <div class="form-group col-12 col-xl-5 col-lg-5 col-md-5 col-sm-12">
-    <label for="lName" >Last Name</label>
+    <label for="lName" class="required">Last Name</label>
       <input type="text" class="form-control" placeholder="e.g. Doe" id="lName" required>
-         <div class="help-block" id="help-block">
-       required
-      </div>
     </div>
   </div>
      <div class="form-row">
     <div class="form-group col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12">
-        <label for="email" >Email</label>
+        <label for="email"class="required" >Email</label>
       <input type="email" class="form-control" placeholder="e.g. mockemail@mail.com" id="email" required>
-         <div id="help-block" class="help-block">
-       required
-      </div>
     </div>
      <div class="form-group col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12">
-        <label for="pass1" >Password</label>
+        <label for="pass1" class="required">Password</label>
       <input type="password" class="form-control" placeholder="6 Characters Minimum" id="pass1" required>
-         <div id="help-block" class="help-block">
-       required
-      </div>
     </div>
     <div class="form-group col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12">
-        <label for="pass2" >Retype Password</label>
+        <label for="pass2" class="required">Retype Password</label>
       <input type="password" class="form-control" placeholder="Confirm Password" id="pass2" required>
-         <div id="help-block" class="help-block">
-       required
-      </div>
     </div>  
   </div>
     
@@ -486,7 +473,8 @@ max-height: 210px !important;
       <input type="text" class="form-control" id="zip" placeholder="e.g. 30022">
     </div>
   </div>
-                <div class="form-row">
+           <br><br>
+                <div class="form-row" >
     <div class="form-group col-12">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -507,13 +495,13 @@ max-height: 210px !important;
                 </div>
                 </div>
   </form>
-            </div>
+            </div> 
   
 </div>
-        </div>
-     
+       </div>
+     </div>
 
-        </div>
+        
       
         
                  <div class="modal fade" id="filterSearch" role="dialog">
@@ -758,7 +746,7 @@ max-height: 210px !important;
 </div>
  
 </footer>
-    
+        </div> 
           <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         
 <!-- Latest compiled and minified JavaScript -->
