@@ -106,6 +106,8 @@ display:inline-block  !important;
             
 
              @media(max-width: 768px){
+                
+   
                  #searchtbl{
                      padding-top: 25px;
                  }
@@ -115,8 +117,10 @@ display:inline-block  !important;
                  body { padding-top: 30px; }
                  
              }
+        
             
 @media (min-width: 768px) {
+   
     #advsearch{
                      font-size: 10px;
                  }
@@ -124,7 +128,10 @@ display:inline-block  !important;
         width: 100%;
     }
     body { padding-top: 200px; } 
-     
+    .tblrespon{
+        
+    }
+             }
  .form-inline{
   width: 100%;
   display: flex;
@@ -269,16 +276,16 @@ display:inline-block  !important;
 </div>
           </div>
           <div class="table-responsive">
-  <table id="orderHistory" style="padding 50px;background-color: #f2f2f2;"class="table table-hover">
-    <thead>
+  <table  id="orderHistory" style="padding 50px;background-color: #f2f2f2;"class="table table-hover tblr">
+     
+    <thead  align="center">
       <tr>
-        <th onclick="sortTableNum(0)">Id No.  <i class="fas fa-sort"></i></th>
-        <th onclick="sortTableAlph(1)">Title  <i class="fas fa-sort"></i></th>
-          <th onclick="sortTableNum(2)">Date  <i class="fas fa-sort"></i></th>
-    <th onclick="sortTableNum(3)">Quantity  <i class="fas fa-sort"></i></th>
-    <th onclick="sortTableNum(4)">Price  <i class="fas fa-sort"></i></th>
-	  <th > </th>
-          <th > </th>
+        <th class="thh" onclick="sortTableNum(0)">Id No.<br><i class="text-center fas fa-sort"></i></th>
+        <th  class="thh"  onclick="sortTableAlph(1)">Title<br><i class="sortTbl fas fa-sort"></i></th>
+          <th  class="thh"  onclick="sortTableNum(2)">Date<br><i class="sortTbl fas fa-sort"></i></th>
+    <th class="thh"  onclick="sortTableNum(3)">Quantity<br><i class="sortTbl fas fa-sort"></i></th>
+    <th class="thh"onclick="sortTableNum(4)">Price<br><i class="sortTbl fas fa-sort"></i></th>
+	  
       </tr>
     </thead>
     <tbody>
@@ -826,6 +833,19 @@ if(count == 3){
     var dt =(new Date(splitDate[2]+"-"+splitDate[0]+"-"+splitDate[1]));
     return dt;
 }
+        
+        
+        
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    document.getElementById("orderHistory").innerHTML =
+ (document.getElementById("orderHistory").innerHTML).replace(/tblr/gi, "fa-xs");
+  } 
+}
+
+var x = window.matchMedia("(max-width: 768px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
 </script>
     
 
