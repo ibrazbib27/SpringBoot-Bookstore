@@ -1,6 +1,8 @@
 
+  
+
 <html><head>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <!-- Bootstrap CSS -->
@@ -9,7 +11,10 @@
 
 	 <script src="https://kit.fontawesome.com/a97b8a9b0d.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
-        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>  
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+ 
+  <link rel="stylesheet" href="css/bootnavbar.css">
          <style type="text/css">
             
 body{
@@ -19,7 +24,9 @@ body{
    background-size: 100% 100%;
    
 }
-
+ .space{
+                 padding: 50px;
+             }
 #bottom{color: black;
   font-style: italic;
   font-size:small;
@@ -506,7 +513,7 @@ max-height: 350px !important;
         
       
         
-                 <div class="modal fade" id="filterSearch" role="dialog">
+              <div class="modal fade" id="filterSearch" role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -517,8 +524,8 @@ max-height: 350px !important;
         </div>
         <div class="modal-body w-100 justify-content-center">
              <div class="container-fluid">
-                 <form id="apply" style="width:100%;"  action="#">
-                     <div class="row">
+                 <form id="apply"  class="w-100" action="#">
+                     <div class="row space">
                          <div  class='col-1'></div>
                      <div  class='col-10'>
                          
@@ -527,8 +534,9 @@ max-height: 350px !important;
 
                      </div>
                          <div  class='col-1'></div>
+                        
                  </div>
-                           <div class="row">
+                           <div class="row space">
                      <div  class='col-1'></div>
                      <div  class='col-10'>
                          <input class="form-control" type="text" placeholder="Author(s)" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
@@ -537,7 +545,7 @@ max-height: 350px !important;
                         <div  class='col-1'></div>        
                  </div>
                      
-                     <div class="row">
+                     <div class="row space">
                          <div  class='col-1'></div>
                      <div  class='col-10'>
                          <input class="form-control" type="text" placeholder="Title" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
@@ -548,7 +556,7 @@ max-height: 350px !important;
 
 
                  </div>
-                  <div class="row">
+                  <div class="row space">
                   
                         <div  class='col-1'></div>
                      <div  class='col-10'>
@@ -557,7 +565,7 @@ max-height: 350px !important;
                      </div>
                         <div  class='col-1'></div>   
                  </div>
-                    <div class="row">
+                    <div class="row space">
                      <div  class='col-1'></div>
                      <div  class='col-10'>
                          <input class="form-control" type="text" placeholder="Publisher(s)" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
@@ -565,7 +573,7 @@ max-height: 350px !important;
                      </div>
                         <div  class='col-1'></div>   
                  </div>
-                      <div class="row">
+                      <div class="row space">
                           <div  class='col-1'></div>
                      <div  class='col-10'>
                           <input class="form-control" type="number" placeholder="Publication Year" min="0" max="2020" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
@@ -574,7 +582,7 @@ max-height: 350px !important;
                         <div  class='col-1'></div>   
                     
                  </div>
-                 <div class="row">
+                 <div class="row space">
                      <div class='col-1'></div>
                      <div class='col-10'>
                          <div class="form-group">
@@ -599,7 +607,7 @@ max-height: 350px !important;
                      </div>
                      <div class='col-1'></div>
                  </div>
-                          <div class="row">
+                          <div class="row space">
                      <div class='col-1'></div>
                      <div class='col-10'>
                          <div class="form-group">
@@ -671,7 +679,7 @@ max-height: 350px !important;
                          
                  </div>
                      
-                     <div class="row">
+                     <div class="row space">
                      <div class='col-1'></div>
                      <div class='col-10'>
                          <div class="form-group">
@@ -687,7 +695,7 @@ max-height: 350px !important;
                      </div>
                          <div class='col-1'></div>
                  </div> 
-                  <div class="row">
+                  <div class="row space">
                       <div class='col-1'></div>
                      <div class='col-10'>
                          <div class="form-group">
@@ -706,14 +714,15 @@ max-height: 350px !important;
                      </div>
            
         </div>
-        <div class="modal-footer justify-content-between" style="text-align:center;">
-          <button id="submitModal"  type="submit" form="apply" style="margin:auto;display:block; background-color: #4BB543; color: white; "  class="btn btn-default" >Search</button>
-             <button type="button" style="margin:auto;display:block; background-color: red; color: white;" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal-footer justify-content-between">
+          <button id="submitModal"  type="submit" form="apply" style="align-items: center; background-color: #4BB543; color: white; "  class="btn btn-default" >Search</button>
+             <button type="button" style="align-items: center; background-color: red; color: white;" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       
     </div>
   </div>
+        
         
         
       <div class="modal fade" id="myModal" role="dialog">
@@ -758,6 +767,11 @@ max-height: 350px !important;
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+   
+    <script src="js/bootnavbar.js" ></script>
     
 <script>
 
@@ -774,3 +788,4 @@ max-height: 350px !important;
 });</script>
         
 </body></html>
+
