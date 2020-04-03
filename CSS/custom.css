@@ -65,7 +65,7 @@ h1{ font-size: 3.8rem; }
 }
 
 @media (max-width: 767px){
-#navbar { height: 180px; overflow-y: auto; }
+#navbar { max-height: 180px; overflow-y: auto; }
 }
 @media (min-width: 768px) {
 #searchbox{ width: 75%; }
