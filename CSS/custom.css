@@ -8,7 +8,22 @@
 #apply input{
 background: #f8f9fa; 
 border: 1px solid #f8f9fa;
-}            
+} 
+
+
+#advsearch{opacity: 0.5;}
+#advsearch:active{ opacity: 1.0;}
+.vis i{ opacity: 0.5; }
+.vis:hover i{ opacity: 0.8; }
+.vis:active i{ opacity: 1.0; }
+
+#advsearch:hover{ 
+cursor: pointer;
+opacity: 0.8;
+}
+.dropdown-toggle:hover{cursor: pointer;}
+#searchIcon:hover{ cursor: pointer; }
+
 #body{
 background: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);
  min-height: 100%; 
@@ -32,7 +47,6 @@ background: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixl
 .dropdown-toggle.active-dropdown::after {
     transform:rotate(-90deg);
 }
-
 h1{
     font-weight: 700;
     text-shadow: 2px 2px 4px red;
@@ -40,30 +54,33 @@ h1{
 }
              
 @media (max-width: 575px){
-              h1{
-        font-size: 3.0rem;
-    }       
-             }
-             @media (min-width: 576px) {
-                  h1{
-        font-size: 3.4rem;
-    }   
-             }
-    @media (min-width: 768px) {
-          h1{
-        font-size: 3.8rem;
-    }   
-             }
-    @media (min-width: 992px) {
-         h1{
-        font-size: 4.2rem;
-    }   
-             } 
+#searchbox{ width: 100%; }
+h1{ font-size: 3.8rem; }   
+
+}
+
+@media (min-width: 576px) {
+h1{ font-size: 3.8rem; }
+#searchbox{ width: 100%; }
+}
+
+@media (max-width: 767px){
+#navbar { height: 180px; overflow-y: auto; }
+}
+@media (min-width: 768px) {
+#searchbox{ width: 75%; }
+h1{ font-size: 3.8rem; }   
+}
+
+@media (min-width: 992px) {
+#searchbox{ width: 60%; }
+h1{ font-size: 3.8rem; }   
+}
+
 @media (min-width: 1200px){
-    h1{
-        font-size: 5rem;
-    }   
-             }
+#searchbox{ width: 60%; }
+h1{ font-size: 3.8rem; }   
+}
 
 .responsive-iframe-container {
 position: relative;
@@ -122,42 +139,14 @@ display:inline-block  !important;
 
             
 
-             @media(max-width: 768px){
-                 #advsearch{
-                     width:100%;
-                 }
-                 
-		     #bootnavbar{
- overflow-y: scroll !important;
-max-height: auto !important;
-}	
-             }
+       
             
-@media (min-width: 768px) {
-    .modal-footer button{
-        width:100%;
-    }
-    #advsearch{
-                     font-size: 10px;
-                 }
-    .dropdown-menu{
-        width: 100%;
-    }
-   
-    
-}
- .form-inline{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
-.form-inline #search{
-  width: 50%;
+
+
+ #collapsebtn{
+ border:none;
 }
-             #collapsebtn{
-                 border:none;
-             }
 .form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #999;
 }
