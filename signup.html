@@ -1,8 +1,5 @@
-
-  
-
 <html><head>
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <!-- Bootstrap CSS -->
@@ -15,200 +12,18 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
  
   <link rel="stylesheet" href="css/bootnavbar.css">
-         <style type="text/css">
-            
-body{
-    width: 100%;
-    background: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);
-     background-repeat: no-repeat;
-   background-size: 100% 100%;
-   
-}
- .space{
-                 padding: 50px;
-             }
-#bottom{color: black;
-  font-style: italic;
-  font-size:small;
-  text-align: center;}
-    h3, p{
-    font-weight: bold;
-    text-shadow: 8px 8px 8px black;
-    color:yellow;
-            }
-
-h1{
-    font-weight: 700;
-    font-size: 3em;
-   
-     left: 50%;
- 
-     text-align: center;
-    text-shadow: 2px 2px 4px blue;
-    color:white;
-}
-
-
-.responsive-iframe-container {
-position: relative;
-padding-bottom: 56.25%;
-padding-top: 30px;
-height: 0;
-overflow: hidden;
-}
-
-.responsive-iframe-container iframe,
-.vresponsive-iframe-container object,
-.vresponsive-iframe-container embed {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-}
- .overlay {
-  position: relative;
-  min-height: 100%;
-  min-width: 100%;
-     top:0;
-     left:0;
-  background: rgba(0, 0, 0, 0.6);
-}
-          .item{
-text-align:center;
-}
-.carousel-inner img{
-display:inline-block  !important;
-}
-            
-
-            
-  #help-block{
-                font-size: 10px;
-                text-align: left;
-                color: red;
-            }   
-    
-
-
-             .navbar-brand{
-                 color: white; 
-                 font-size: 4rem; 
-                 font-family: cursive; 
-                 font-weight: bold;
-             }
-             .navbar {
-  padding:0rem;
-  margin-bottom:2rem;
-}
-
-.dropdown .dropdown-menu {
-  border-radius:0;
- }
-
-            
-
-             @media(max-width: 768px){
-                 #advsearch{
-                     width:100%;
-                 }
-                 body { padding-top: 30px; }
-                 
-		     #bootnavbar{
- overflow-y: scroll !important;
-max-height: 210px !important;
-}	
-                  .jumbotron{
- overflow-y: scroll !important;
-max-height: 350px !important;
-}	
-             }
-            
-@media (min-width: 768px) {
-    #advsearch{
-                     font-size: 10px;
-                 }
-    .dropdown-menu{
-        width: 100%;
-    }
-    body { padding-top: 200px; } 
-    
-}
- .form-inline{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.form-inline #search{
-  width: 50%;
-}
-             #collapsebtn{
-                 border:none;
-             }
-
-                  
-            #register{
-               
-                width: 70%;
-                height: 65%;
-                
-               
-               
-                
-    
-            }
-            hr{
-    width: 100%;
-    border-top: 1px solid red;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-
-}
-             body{
-                 text-align: center;
-             } 
-             form {
-    display: inline-block;
-}
-             label{
-                 color:black;
-             }
- .required:after {
-    content:" *";
-    color: red;
-  }
-             
-             .borders{
-                   background-color: #f8f9fa; 
-                border: rgb(248, 249, 250);
-             } 
-             
-input::-webkit-input-placeholder {
-color: #999 !important;
-}
- 
-input:-moz-placeholder { /* Firefox 18- */
-color: #999 !important;  
-}
- 
-input::-moz-placeholder {  /* Firefox 19+ */
-color: #999 !important;  
-}
- 
-input:-ms-input-placeholder {  
-color: #999 !important;  
-}            
-</style>
+  <link rel="stylesheet" href="CSS/custom.css">
+         
     
 		</head>
     <body>         
-     
+      
         
-  <div class="overlay">                
+                  
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="bootnavbar">
   <div class="navbar-toggler-right">
-   <button id="collapsebtn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+   <button id="collapsebtn" class="navbar-toggler  py-2" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
@@ -216,8 +31,8 @@ color: #999 !important;
 
 
 
-  <div class="collapse navbar-collapse flex-column " id="navbar">
-<ul style="text-align: center;"class="navbar-nav w-100 justify-content-center px-3">
+  <div class="collapse navbar-collapse flex-column" id="navbar">
+<ul class="navbar-nav w-100 justify-content-center text-center px-3">
      <a class="navbar-brand" href="#">
     <span class="">BookIt!</span>
   </a>
@@ -225,16 +40,16 @@ color: #999 !important;
     <ul class="navbar-nav nav-fill w-100 justify-content-center ">
       <li class="nav-item dropdown">
         
-    <form class="form-inline">
-   <div style="width: 60%"class="input-group sm-form form-sm form-2 pl-0">
+    <form class="form-inline w-100 d-flex justify-content-center">
+   <div class="input-group justify-content-center px-md-0 px-5" id="searchbox">
   <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
   <div class="input-group-append">
-    <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-grey"
+    <span class="input-group-text" id="searchIcon"><i class="fas fa-search bg-grey"
         aria-hidden="true"></i></span>
   </div>
 </div>
-  
-          <a style="margin-left: 10px; align-content: center; color:white;"  id="advsearch" data-target="#filterSearch" data-toggle="modal" >Advanced Search  <i class="fas fa-search-plus"></i></a>
+  <div class="w-100"></div>
+          <a class="text-white text-center px-md-2 small py-2" id="advsearch"  onclick="focus()" data-target="#filterSearch" data-toggle="modal" >Advanced Search  <i class="fas fa-search-plus"></i></a>
         
           </form>
       </li>
@@ -242,80 +57,105 @@ color: #999 !important;
     </ul>
 
     <ul class="navbar-nav justify-content-center nav-fill w-100  px-3">
-      <li class="nav-item">
-        <a class="nav-link" href="https://ibrazbib27.github.io/cs4050/home.html">Home</a>
+      <li class="nav-item active">
+        <a class="nav-link " href="https://ibrazbib27.github.io/cs4050/loggedin.html" onclick="document.body.style.cursor='wait'; return true;">Home<span class="sr-only">(current)</span></a>
       </li>
      <li class="nav-item ">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#" onclick="document.body.style.cursor='wait'; return true;">About</a>
       </li>
       
-	         <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Orders</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="https://ibrazbib27.github.io/cs4050/checkout.html">Checkout  <i class="ic fas fa-shopping-basket"></i></a>
-          <a class="dropdown-item" href="https://ibrazbib27.github.io/cs4050/orderhistory.html">Order History  <i class="ic fas fa-history"></i></a>
-          <a class="dropdown-item" href="https://ibrazbib27.github.io/cs4050/cart.html">View Cart  <i class="ic fas fa-shopping-cart"></i></a>
+        <div class="dropdown-menu w-100 text-center text-md-left " aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item w-100 pl-md-3 pl-lg-4 pr-lg-1 pr-md-0 " href="https://ibrazbib27.github.io/cs4050/checkout.html" onclick="document.body.style.cursor='wait'; return true;">Checkout  <i class="ic fas fa-shopping-basket float-md-right mr-3"></i></a>
+            
+          <a class="dropdown-item w-100 pl-md-3 pl-lg-4 pr-lg-1 pr-md-0 " href="https://ibrazbib27.github.io/cs4050/orderhistory.html" onclick="document.body.style.cursor='wait'; return true;">Order History  <i class="ic fas fa-history float-md-right mr-3"></i></a>
+            
+          <a class="dropdown-item w-100 pl-md-3 pl-lg-4 pr-lg-1 pr-md-0 " href="https://ibrazbib27.github.io/cs4050/cart.html" onclick="document.body.style.cursor='wait'; return true;">View Cart  <i class="ic fas fa-shopping-cart float-md-right mr-3"></i></a>
         </div>
       </li>
-	    
-         <li class="nav-item" >
-          <a class="nav-link " href="#">Login  <i style="color:white"class="fas fa-sign-in-alt"></i></a>
+        
+        
+          <li class="nav-item" >
+          <a class="nav-link vis" href="#" onclick="document.body.style.cursor='wait'; return true;">Login  <i class="fas fa-sign-in-alt text-white nav-link text-right"></i></a>
       </li>
-        <li class="nav-item active">
-          <a class="nav-link "  href="#">Sign Up  <i style="color:white; "class="fas fa-user-plus"></i><span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link vis"  href="https://ibrazbib27.github.io/cs4050/signup.html" onclick="document.body.style.cursor='wait'; return true;">Sign Up  <i class="fas fa-user-plus text-white nav-link text-right"></i></a>
       </li>
-	
+
     </ul>
 
 
   </div>
 
 </nav>
-        <div class="container">
-            
-           
-            
-         
-        <h1 >Create a New Account</h1>
-        <br>
-        <a href="https://ibrazbib27.github.io/cs4050/login.html" style="color:white; font-size: 10px;">Already a member? Sign in</a>
-            <div class="jumbotron" >      
-      
-        <div class="row">
-          <div class="col col-12 align-self-center">
+        
+         <div class="container-fluid h-100 justify-content-center">
+         <div id="body" class="row">
+            <div class="overlay"></div> 
+             
+             <div class="col-12 my-3 my-sm-4 my-md-5"></div>
+              <div class="col-12 my-md-5"></div>
+             <div class="col-12 my-md-5"></div>
+             
+          <div class="col-12 text-center align-self-center">    
+        <h1 id="pg2H1">Create a New Account</h1>
+             </div>
+             
+            <div class="col-12 text-center align-self-center p-5">   
+            <div class="jumbotron p-5">      
+        <div class="row align-self-center">
+          <div class="col-12 align-self-center">
        <form id="register" data-toggle="validator" role="form"  class="justify-content-center w-100">
+            <div class="form-row justify-content-center w-100">
+               <div class="form-group col-12">
+           <h6 class="small "><a href="https://ibrazbib27.github.io/cs4050/login.html" class="text-primary">Already a member? Sign In!</a></h6>
+                </div></div>
+            <div class="form-row justify-content-center w-100 pb-3">
+               <div class="form-group col-12">
            <small style="color:red">*</small> <small>Indicates a required field</small>
-           <div class="form-row">
-               <div class="form-group col col-xs-12">
+                </div></div>
+           <div class="form-row justify-content-center w-100">
+               <div class="form-group col-12">
                    <h3 >User Information</h3>
                    <hr>
-               </div></div>   
-    <div class="form-row">
-    <div class="form-group col-12 col-xl-7 col-lg-7 col-md-7 col-sm-12">
+               </div></div> 
+           
+    <div class="form-row w-100 justify-content-xl-between">
+    <div class="form-group col-12 col-md-6 col-xl-3 ">
     <label for="fName"  class="required">First Name </label>
       <input type="text" class="form-control borders" placeholder="e.g. John" id="fName" required>
     </div>
-    <div class="form-group col-12 col-xl-5 col-lg-5 col-md-5 col-sm-12">
+    <div class="form-group col-12 col-md-6 col-xl-3">
     <label for="lName" class="required">Last Name</label>
       <input type="text" class="form-control borders" placeholder="e.g. Doe" id="lName" required>
-    </div>
-  </div>
-     <div class="form-row">
-    <div class="form-group col-12 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        </div>
+        
+        <div class="form-group col-12 col-xl-6">
         <label for="email"class="required" >Email</label>
       <input type="email" class="form-control borders" placeholder="e.g. mockemail@mail.com" id="email" required>
     </div>
-     <div class="form-group col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+  </div>
+           
+            
+           
+     <div class="form-row w-100 pt-1 pb-5 justify-content-xl-between">
+     <div class="form-group col-12 col-md-4 col-xl-3">
         <label for="pass1" class="required">Password</label>
       <input type="password" class="form-control borders" placeholder="6 Characters Minimum" id="pass1" required>
     </div>
-    <div class="form-group col-12 col-xl-3 col-lg-3 col-md-6 col-sm-12">
+    <div class="form-group col-12 col-md-4 col-xl-3">
         <label for="pass2" class="required">Retype Password</label>
       <input type="password" class="form-control borders" placeholder="Confirm Password" id="pass2" required>
-    </div>  
+    </div>
+     <div class="form-group col-12 col-md-4 col-xl-4">
+    <label for="phone">Phone Number</label>
+<input type="tel" id="phone" class="form-control borders" placeholder="e.g. 111-111-1111" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
   </div>
-    
-           <div class="form-row">
+           </div>
+           
+    <!-- Shipping info row -->
+           <div class="form-row justify-content-center w-100">
                <div class="form-group col col-xs-12">
                    <h3 >Shipping Information</h3>
                    <hr>
@@ -326,8 +166,8 @@ color: #999 !important;
       <input type="text" class="form-control borders" placeholder="e.g. 123 Main St." id="add">  
     </div>
   </div>
-     <div class="form-row">
-    <div class="form-group col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+     <div class="form-row justify-content-lg-between pt-1 pb-5">
+    <div class="form-group col-12 col-xl-4 col-lg-5 col-md-6 col-sm-12">
       <label for="city">City</label>
       <input type="text" class="form-control borders" id="city" placeholder="e.g. Atlanta">
     </div>
@@ -392,14 +232,16 @@ color: #999 !important;
       <input type="text" class="form-control borders" id="zip" placeholder="e.g. 30022">
     </div>
   </div>
-                
-           <div class="form-row">
-               <div class="form-group col col-xs-12">
+           
+            <!--Billing heading row -->
+           <div class="form-row justify-content-center w-100">
+               <div class="form-group col-12">
                    <h3 >Billing Information</h3>
                    <hr>
-               </div></div>   
-               
-                <div class="form-row">
+               </div></div> 
+           
+               <!--card no and name row -->
+                <div class="form-row justify-content-center w-100">
                       <div class="form-group col-12 col-md-5">
     <label for="cardName" >Name on Card</label>
       <input type="text" class="form-control borders" placeholder="e.g. John Doe" id="cardName">
@@ -413,29 +255,30 @@ color: #999 !important;
      <input class="form-control borders" type="text" placeholder="e.g. 111" id="cv">
     </div>
            </div>
-                     <div class="form-row">
-                         <div id="expM"class="form-group col-3 col-md-2 ">
-      <label for="Month" style="width:100%; text-align: right;">Expiration</label>
+           
+                     <div class="form-row  w-100">
+                         <div id="expM"class="form-group col-6 col-md-3 col-lg-2">
+      <label for="Month" class="w-100 text-right">Expiration</label>
       <select id="Month" class="form-control selectpicker" data-live-search="true" data-size="3" title="Month">
         <option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
       </select>
     </div>
                          
-          <div id="expY"class="form-group col-3 col-md-2 ">
-      <label for="Year" style="width:100%; text-align: left">Date</label>
+          <div id="expY"class="form-group  col-6 col-md-3 col-lg-2">
+      <label for="Year" class="w-100 text-left">Date</label>
       <select id="Year" class="form-control selectpicker" data-live-search="true" data-size="3" title="Year">
         <option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option>
       </select>
     </div>                
                          
                          
-                     <div id="bankk"class="form-group col-6  col-md-8">
+    <div id="bankk"class="form-group col-12 col-md-6 col-lg-4 w-100 ml-lg-auto">
       <label for="bank">Bank</label>
-      <select id="bank" class="form-control selectpicker" data-live-search="true" data-size="3" title="Choose a Bank">
-         <option>American Express</option>
-        <option>Bank of America</option>
-          <option>Master Card</option>
-           <option>Wells Fargo</option>
+      <select dir="rtl"id="bank" class="form-control selectpicker" data-live-search="true" data-size="3" title="Card Type">
+         <option class="w-100" data-icon="fab fa-cc-amex fa-lg pr-3 pr-sm-5 pr-md-3 float-right">American Express</option>
+        <option class="w-100" data-icon="fab fa-cc-discover fa-lg pr-3 pr-sm-5 pr-md-3 float-right">Discover</option>
+          <option class="w-100" data-icon="fab fa-cc-mastercard fa-lg pr-3 pr-sm-5 pr-md-3 float-right">Master Card</option> 
+           <option class="w-100" data-icon="fab fa-cc-visa fa-lg pr-3 pr-sm-5 pr-md-3 float-right">Visa</option>
       </select>
     </div>
            </div>
@@ -445,7 +288,7 @@ color: #999 !important;
       <input type="text" class="form-control borders" placeholder="e.g. 123 Main St." id="add">  
     </div>
   </div>
-     <div class="form-row">
+     <div class="form-row pb-5">
     <div class="form-group col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
       <label for="city">City</label>
       <input type="text" class="form-control borders" id="city" placeholder="e.g. Atlanta">
@@ -519,9 +362,7 @@ color: #999 !important;
       <label class="form-check-label" for="invalidCheck">
         Agree to the terms and conditions
       </label>
-       <div style=" font-size: 10px;
-               
-                color: red;" class="help-block">
+       <div class="small text-danger help-block">
         You must agree before submitting.
       </div>
     </div>
@@ -529,7 +370,7 @@ color: #999 !important;
                 </div>
       <div class="form-row">
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <button class="btn btn-primary" type="submit">Create Account</button>
+  <button class="btn btn-primary" type="submit" >Create Account</button>
                 </div>
                 </div>
   </form>
@@ -537,12 +378,70 @@ color: #999 !important;
   
 </div>
        </div>
-     </div>
+             
+             </div>      
+             
+             
+             
+             
+             
+             
+          <div class="col-12 py-md-5 py-3" ></div>
 
         
+            
+<div id="footer" style="background-color: #f2f2f2; "class="col-12 align-self-end py-md-2 py-1">
+
+<div class="col-12 footeralign text-center">
+<i style="color:#3b5998; padding-right: 35px;"class="fab fa-facebook-square fa-2x"></i>
+<i style="color:#38A1F3; padding-right: 35px;"class="fab fa-twitter-square fa-2x"></i>
+<i style="color:#fb3958"class="fab fa-instagram-square fa-2x"></i>
+</div>
+
+<div id="bottom" class="col-12 footeralign text-center ">
+ © 2020 Copyright: BookIt.com
+</div>
+
+</div>
+
+
+         </div>  
+             
+             
+             
+             
+         
+         <!-- Signup Confirmation Modal--> 
+      <div class="modal fade" id="signupConfirmation" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+             <h5 class='col-12 modal-title text-center' style="color: #4BB543;">
+              Registration is Complete  <i class="far fa-check-square"></i>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </h5>
+        </div>
+        <div class="modal-body">
+          Congragulation on successfully creating an account with BookIt! To login into your new account click on the "Login" button below!
+        </div>
+        <div class="modal-footer" style="text-align:center;" >
+          <a role="button" class="btn btn-success text-white m-auto d-block" href="https://ibrazbib27.github.io/cs4050/loggedin.html" target="_self">Login</a>
+        </div>
+      </div>
       
-        
-              <div class="modal fade" id="filterSearch" role="dialog">
+    </div>
+  </div>         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+          <!-- Advance Search Modal--> 
+           <div class="modal fade"  id="filterSearch" role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -551,67 +450,82 @@ color: #999 !important;
           <button type="button" class="close" data-dismiss="modal">&times;</button>
          </h5>
         </div>
-        <div class="modal-body w-100 justify-content-center">
+        <div class="modal-body justify-content-center">
              <div class="container-fluid">
-                 <form id="apply"  class="w-100" action="#">
-                     <div class="row space">
+                 <form id="apply" onsubmit="document.body.style.cursor='wait'; return true;"  action="https://www.adweek.com/digital/news-sites-top-list-slowest-loading-web-pages-161619/">
+                     <div class="row py-5">
                          <div  class='col-1'></div>
                      <div  class='col-10'>
                          
-                         <input class="form-control" type="text" placeholder="Keyword(s)" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
+                         <input class="form-control" type="text" placeholder="Keyword(s)">
 
 
                      </div>
                          <div  class='col-1'></div>
-                        
                  </div>
-                           <div class="row space">
+                     
+                     <div class="row py-1"></div> 
+                      <div class="row py-1"></div> 
+                     
+                           <div class="row py-5">
                      <div  class='col-1'></div>
                      <div  class='col-10'>
-                         <input class="form-control" type="text" placeholder="Author(s)" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
-
+                         <input class="form-control" type="text" placeholder="Author(s)" >
+                        
                      </div>
                         <div  class='col-1'></div>        
                  </div>
                      
-                     <div class="row space">
+                   <div class="row py-1"></div> 
+                      <div class="row py-1"></div> 
+                     
+                     <div class="row py-5">
                          <div  class='col-1'></div>
                      <div  class='col-10'>
-                         <input class="form-control" type="text" placeholder="Title" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
-
+                         <input class="form-control" type="text" placeholder="Title">
                      </div>
                         <div  class='col-1'></div>    
-                     
-
-
                  </div>
-                  <div class="row space">
+                     
+                     <div class="row py-1"></div> 
+                      <div class="row py-1"></div>
+                     
+                  <div class="row py-5">
                   
                         <div  class='col-1'></div>
                      <div  class='col-10'>
-                         <input class="form-control" type="text" placeholder="ISBN(s)" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
-
+                         <input class="form-control" type="text" placeholder="ISBN(s)">
                      </div>
                         <div  class='col-1'></div>   
                  </div>
-                    <div class="row space">
+                     
+                    <div class="row py-1"></div> 
+                      <div class="row py-1"></div>
+                     
+                    <div class="row py-5">
                      <div  class='col-1'></div>
                      <div  class='col-10'>
-                         <input class="form-control" type="text" placeholder="Publisher(s)" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
-
+                         <input class="form-control" type="text" placeholder="Publisher(s)" >
                      </div>
                         <div  class='col-1'></div>   
                  </div>
-                      <div class="row space">
+                     
+                     <div class="row py-1"></div> 
+                      <div class="row py-1"></div>
+                     
+                      <div class="row py-5">
                           <div  class='col-1'></div>
                      <div  class='col-10'>
-                          <input class="form-control" type="number" placeholder="Publication Year" min="0" max="2020" style=" background: #f8f9fa; border: 1px solid #f8f9fa;">
-
+                          <input class="form-control" type="number" placeholder="Publication Year" min="0" max="2020" >
                      </div>
                         <div  class='col-1'></div>   
                     
                  </div>
-                 <div class="row space">
+                     
+                     <div class="row py-1"></div>
+                     
+                     
+                 <div class="row py-5">
                      <div class='col-1'></div>
                      <div class='col-10'>
                          <div class="form-group">
@@ -636,7 +550,7 @@ color: #999 !important;
                      </div>
                      <div class='col-1'></div>
                  </div>
-                          <div class="row space">
+                          <div class="row py-5">
                      <div class='col-1'></div>
                      <div class='col-10'>
                          <div class="form-group">
@@ -708,7 +622,7 @@ color: #999 !important;
                          
                  </div>
                      
-                     <div class="row space">
+                     <div class="row py-5">
                      <div class='col-1'></div>
                      <div class='col-10'>
                          <div class="form-group">
@@ -724,7 +638,7 @@ color: #999 !important;
                      </div>
                          <div class='col-1'></div>
                  </div> 
-                  <div class="row space">
+                  <div class="row py-5">
                       <div class='col-1'></div>
                      <div class='col-10'>
                          <div class="form-group">
@@ -738,15 +652,25 @@ color: #999 !important;
                      </div>
                  </div>
                  <div class='col-1'></div>
-                    
+                     <div class="row my-5"></div>  
                  </form>
+                  
                      </div>
            
         </div>
-        <div class="modal-footer justify-content-between">
-          <button id="submitModal"  type="submit" form="apply" style="align-items: center; background-color: #4BB543; color: white; "  class="btn btn-default" >Search</button>
-             <button type="button" style="align-items: center; background-color: red; color: white;" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+       
+        <div class="modal-footer text-center row justify-content-md-between">
+           
+            <div class="col-12 col-md-4">
+          <button  type="submit" form="apply"  class="btn btn-success w-100" >Search</button>
+            </div>
+            
+           
+            
+            <div class="col-12 col-md-4">
+             <button type="button" class="btn  btn-danger w-100" data-dismiss="modal">Close</button>
+            </div>
+        
       </div>
       
     </div>
@@ -754,67 +678,49 @@ color: #999 !important;
         
         
         
-      <div class="modal fade" id="myModal" role="dialog">
+        
+        
+        
+         <div class="modal fade" id="editProfile" role="dialog">
     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-             <h5 class='col-12 modal-title text-center' style="color: #4BB543;">
-              Registration is Complete  <i class="far fa-check-square"></i>
+             <h5 class='col-12 modal-title text-center' style="color: black;">
+             Edit Profile  <i class="fas fa-user-edit"></i>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
          </h5>
         </div>
         <div class="modal-body">
-          Congragulation on successfully completing the registration process for BookIt! To login into your new account click on the "Login" button below!
+         
         </div>
         <div class="modal-footer" style="text-align:center;" >
-          <button id="accComplete"  type="button" onclick="window.open('https://ibrazbib27.github.io/cs4050/loggedin.html','_self')" style="margin:auto;display:block; background-color: #4BB543; color: white;"  class="btn btn-default" >Login</button>
+          <button id="editProfileBtn"  type="button"  style="margin:auto;display:block; background-color: red; color: white;"  data-dismiss="modal" class="btn btn-default" >Login</button>
         </div>
       </div>
       
     </div>
   </div>    
-        <footer >
-  <div style="background-color: #f2f2f2; text-align: center; padding-bottom: "class="container-fluid">
-
-<i style="color:#3b5998; padding-right: 35px;"class="fab fa-facebook-square fa-2x"></i>
-<i style="color:#38A1F3; padding-right: 35px;"class="fab fa-twitter-square fa-2x"></i>
-<i style="color:#fb3958"class="fab fa-instagram-square fa-2x"></i>
-        
-<div id="bottom">
- © 2020 Copyright: BookIt.com
-    </div>
-</div>
- 
-</footer>
         </div> 
           <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
-
-<!-- (Optional) Latest compiled and minified JavaScript translation files -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  
- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
    
+        <!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+        
     <script src="js/bootnavbar.js" ></script>
-    
-<script>
-
-        $("#click").onclick(function(e){
-    $('#filterSearch').modal('show');
-    return false;
+    <script type="text/javascript">
+$(document).ready(function() {
+  $('#register').on('submit', function(e){
+      $('#signupConfirmation').modal('show');
+      e.preventDefault();
+  });
 });
-       
-    
-        </script>
-        <script>$("#register").submit(function(e){
-    $('#myModal').modal('show');
-    return false;
-});</script>
+$('#filterSearch').on('shown.bs.modal', function () {
+  $(this).find('input:first').trigger('focus')
+})
+
+    </script>
+        </div>
         
 </body></html>
-
