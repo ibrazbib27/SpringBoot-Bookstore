@@ -47,9 +47,14 @@ background: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixl
 .dropdown-toggle.active-dropdown::after {
     transform:rotate(-90deg);
 }
-h1{
+#pg1H1{
     font-weight: 700;
     text-shadow: 2px 2px 4px red;
+    color:white;
+}
+#pg2H1{
+    font-weight: 700;
+    text-shadow: 2px 2px 4px blue;
     color:white;
 }
              
@@ -65,7 +70,7 @@ h1{ font-size: 3.8rem; }
 }
 
 @media (max-width: 767px){
-#navbar { max-height: 180px !important; overflow-y:  scroll !important; }
+#navbar { height: 180px; overflow-y: auto; }
 }
 @media (min-width: 768px) {
 #searchbox{ width: 75%; }
@@ -138,10 +143,28 @@ display:inline-block  !important;
  }
 
             
+  hr{
+    width: 100%;
+    border-top: 1px solid red;
+    border-bottom: 1px solid rgba(0,0,0,0.2);           
 
-       
-            
+}
 
+    #register {
+    display: inline-block;
+}
+    label{
+                 color:black;
+             }
+ .required:after {
+    content:" *";
+    color: red;
+  }
+             
+             .borders{
+                   background-color: #f8f9fa; 
+                border: rgb(248, 249, 250);
+             } 
 
 
  #collapsebtn{
