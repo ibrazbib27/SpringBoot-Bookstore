@@ -218,11 +218,11 @@
     </div>
     <div class="form-group col-md-5 col-9">
     <label for="card">Card Number <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top"  title="This field is optional. Please enter the valid number on your credit/debit card."></i></label>
- <input class="form-control borders" type="tel" placeholder="e.g. 1111 1111 1111 1111" id="card">
+ <input class="form-control borders" maxlength="19" type="tel" placeholder="e.g. 1111 1111 1111 1111" id="card">
                      </div>
                      <div class="form-group col-3 col-md-2">
       <label for="cv">CVV <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top"  title="This field is optional."></i></label>
-     <input class="form-control borders" type="number" placeholder="e.g. 111" id="cv">
+     <input class="form-control borders" type="number" maxlength="4" minlength="3" placeholder="e.g. 111" id="cv">
     </div>
         <div class="form-group col-12 col-sm-5 col-md-3 mr-auto mt-2">
     <label for="exp">Expiration Date <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top"  title="This field is optional. Please enter the exoiration date on your credit/debit card."></i></label>
@@ -664,9 +664,15 @@ $('#card').validateCreditCard({ accept: ['visa', 'mastercard','discover', 'amex'
 
              
     <script type="text/javascript"> 
-    
-        
-    bootstrapValidate("#fname", "min:3: 3charch")
+   bootstrapValidate("#fname", "required: Please enter your first name")
+    bootstrapValidate("#lname", "required: Please enter your last name")
+    bootstrapValidate("#email", "required: Please enter your email")
+    bootstrapValidate("#email", "email: Please enter a valid email address")
+    bootstrapValidate("#pass1", "required: Please enter a password")
+    bootstrapValidate("#pass1", "regex:^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$:Please enter a valid password")
+    bootstrapValidate('#pass2', 'matches:#pass1: Your passwords should match')
+    bootstrapValidate("#pass2", "required: Please reenter your password")
+ bootstrapValidate("#phone", "regex:[0-9]{3}-[0-9]{3}-[0-9]{4}:Please enter a valid phone number")
 
         
 $(document).ready(function() {
