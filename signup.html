@@ -226,7 +226,7 @@
     </div>
         <div class="form-group col-12 col-sm-5 col-md-3 mr-auto mt-2">
     <label for="exp">Expiration Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
-            <input class="form-control borders" type="tel" maxlength="7" data-mask="00/00" id="exp" placeholder="MM/YY"> <select class="form-control selectpicker" id="bank" >
+            <input class="form-control borders" type="text" maxlength="5" data-mask="00/00" id="exp" placeholder="MM/YY"> <select class="form-control selectpicker" id="bank" >
             <option value="American Express"></option>
             <option value="Discover"></option>
             <option value="Masterscard"></option>
@@ -678,6 +678,9 @@
     bootstrapValidate("#pass2", "required: Please reenter your password")
  bootstrapValidate("#phone", "regex:[0-9]{3}-[0-9]{3}-[0-9]{4}:Please enter a valid phone number")
  bootstrapValidate("#card", "regex:^[3-6]: Please make sure you are entering a valid American Express, Discover, Masterscard, or Visa card")
+bootstrapValidate("#exp", "regex:^(0[1-9]|1[0-2])\/\d{2}$: Please enter a valid expiration date (MM/YY)")
+bootstrapValidate("#cv", "regex:^\d{3,4}$: Please enter a valid 3 or 4 digit security code on the back of your card")
+	 
 $('#exp').keyup(function(){
     var expDate = document.getElementById("exp").innerHTML;
     var date = expDate.split("/");
