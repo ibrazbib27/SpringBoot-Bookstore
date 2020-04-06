@@ -94,7 +94,21 @@ padding-top: 30px;
 height: 0;
 overflow: hidden;
 }
-
+.ap-dropdown-menu {
+width:100%;
+}
+.ap-suggestion-icon{
+    float:left;
+    margin-left: 5px;
+}
+.ap-name{
+    float:left;
+    margin-left: 5px;
+}
+.ap-address{
+    float:left;
+    margin-left: 5px;
+}
 .responsive-iframe-container iframe,
 .vresponsive-iframe-container object,
 .vresponsive-iframe-container embed {
@@ -156,8 +170,8 @@ display:inline-block  !important;
     label{
                  color:black;
              }
- .required:after {
-    content:" *";
+ .required:before{
+    content:"* ";
     color: red;
   }
              
