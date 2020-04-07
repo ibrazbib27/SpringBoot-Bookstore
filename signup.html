@@ -226,13 +226,16 @@
     </div>
         <div class="form-group col-12 col-sm-5 col-md-3 mr-auto mt-2">
     <label for="exp">Expiration Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
-            <input class="form-control borders" type="text" data-mask="00/00" id="exp" placeholder="MM/YY"> <select class="form-control selectpicker" id="bank" >
+            <input class="form-control borders" type="text" data-mask="00/00" id="exp" placeholder="MM/YY"> 
+                     </div>
+		 <div class="form-group">
+		<select class="form-control selectpicker" id="bank" >
             <option value="American Express"></option>
             <option value="Discover"></option>
-            <option value="Masterscard"></option>
+            <option value="Mastercard"></option>
             <option value="Visa"></option>
             </select>
-                     </div>
+				</div>
            </div>
            
 
@@ -694,7 +697,7 @@ $('#card').change(function(){
       $('#bank').selectpicker('val', "Discover");  
     }
     if(card.charAt(0) == '5'){
-      $('#bank').selectpicker('val', "Masterscard");  
+      $('#bank').selectpicker('val', "Mastercard");  
     }
     if(card.charAt(0) == '6'){
       $('#bank').selectpicker('val', "Visa");  
