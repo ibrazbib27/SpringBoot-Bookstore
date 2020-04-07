@@ -222,7 +222,7 @@
                      </div>
                      <div class="form-group col-3 col-md-2">
       <label for="cv">CVV <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the 3 or 4 digit security code at the back of your credit/debit card."></i></label>
-     <input class="form-control borders" type="number" maxlength="4" minlength="3" id="cv" placeholder="e.g. 000">
+     <input class="form-control borders" type="text" maxlength="4" minlength="3" id="cv" placeholder="e.g. 000">
     </div>
         <div class="form-group col-12 col-sm-5 col-md-3 mr-auto mt-2">
     <label for="exp">Expiration Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
@@ -681,12 +681,12 @@
 bootstrapValidate("#exp", "regex:^(0[1-9]|1[0-2])\/\d{2}$: Please enter a valid expiration date (MM/YY)")
 bootstrapValidate("#cv", "regex:^\d{3,4}$: Please enter a valid 3 or 4 digit security code on the back of your card")
 	 
-$('#exp').keyup(function(){
+$('#exp').change(function(){
     var expDate = document.getElementById("exp").innerHTML;
     var date = expDate.split("/");
     var month = parseInt(date[0]);
     var year = parseInt(date[1]);
-    if((month <= 0) && (year <= 20)){
+    if((month <= 4) && (year <= 20)){
       bootstrapValidate("#exp", "Please enter a valid expiration date (MM/YY)")   
     }
     if((month <= 0) || (month > 12)){
@@ -700,7 +700,7 @@ $('#exp').keyup(function(){
     
 });
         
-$('#card').keyup(function(){
+$('#card').change(function(){
     var card = document.getElementById("card").innerHTML;
    
     if(card.charAt(0) == '3'){
