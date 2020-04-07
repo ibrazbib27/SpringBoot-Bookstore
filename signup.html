@@ -149,7 +149,7 @@
     <div class="form-group col-12 col-md-4 col-xl-3">
         <label for="pass2" class="required">Retype Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Must not be blank. Please reenter your password. Passwords must be matching."></i></label>
       <input type="password" class="form-control borders" placeholder="Confirm Password" id="pass2"  data-toggle="tooltip" data-placement="bottom" required>
-        <div class="invalid-feedback"></div>
+       
     </div>
      <div class="form-group col-12 col-md-4 col-xl-4">
     <label for="phone">Phone Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="This field is optional. Please enter a valid 10 digit phone number."></i></label>
@@ -226,7 +226,7 @@
     </div>
         <div class="form-group col-12 col-sm-5 col-md-3 mr-auto mt-2">
     <label for="exp">Expiration Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
-            <input class="form-control borders" type="tel" data-mask="00/00" id="exp" placeholder="MM/YY"> 
+            <input class="form-control borders" type="tel"  id="exp" placeholder="MM/YYYY"> 
                      </div>
 		 <div class="form-group">
 		<select class="form-control selectpicker" id="bank" >
@@ -671,36 +671,43 @@
     <script type="text/javascript"> 
     $('#bank').selectpicker('hide');
 
-   bootstrapValidate("#fname", "required: Please enter your first name")
-    bootstrapValidate("#lname", "required: Please enter your last name")
-    bootstrapValidate("#email", "required: Please enter your email")
-    bootstrapValidate("#email", "email: Please enter a valid email address")
-    bootstrapValidate("#pass1", "required: Please enter a password")
-    bootstrapValidate("#pass1", "regex:^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$:Please enter a valid password")
-    bootstrapValidate('#pass2', 'matches:#pass1: Your passwords should match')
-    bootstrapValidate("#pass2", "required: Please reenter your password")
- bootstrapValidate("#phone", "regex:[0-9]{3}-[0-9]{3}-[0-9]{4}:Please enter a valid phone number")
-
-bootstrapValidate("#cv", "min:3: Please enter a valid 3 or 4 digit security code on the back of your card")
-	    bootstrapValidate("#cv", "max:4: Please enter a valid 3 or 4 digit security code on the back of your card")
-	    bootstrapValidate("#cv", "numeric: Please enter a valid 3 or 4 digit security code on the back of your card")
+   bootstrapValidate("#fname", "required: Please enter your first name");
+    bootstrapValidate("#lname", "required: Please enter your last name");
+    bootstrapValidate("#email", "required: Please enter your email");
+    bootstrapValidate("#email", "email: Please enter a valid email address");
+    bootstrapValidate("#pass1", "required: Please enter a valid password")
+    bootstrapValidate("#pass1", "regex:^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$:Please enter a valid password");
+    bootstrapValidate('#pass2', 'matches:#pass1: Your passwords should match');
+    bootstrapValidate("#pass2", "required: Please reenter your password");
+ bootstrapValidate("#phone", "regex:[0-9]{3}-[0-9]{3}-[0-9]{4}:Please enter a valid phone number");
+         bootstrapValidate("#exp", "min:9:Please enter a valid expiration date");
+bootstrapValidate("#exp", "regex:^(0[123456789]|10|11|12) ([/]) (20[2-9][0-9])$:Please enter a valid expiration date");
+bootstrapValidate("#cv", "min:3: Please enter a valid 3 or 4 digit security code on the back of your card");
+	    bootstrapValidate("#cv", "max:4:Please enter a valid 3 or 4 digit security code on the back of your card");
+	    bootstrapValidate("#cv", "numeric:Please enter a valid 3 or 4 digit security code on the back of your card");
 	    
 	 
 
         
 $('#card').change(function(){
-    var card = document.getElementById("card").innerHTML;
-   
-    if(card.charAt(0) == '3'){
-      $('#bank').selectpicker('val', "American Express");  
+    var card = document.getElementById("card").value;
+  
+    if(card.startsWith('37') || card.startsWith('34')){
+      $('#bank').selectpicker('val', "American Express");
+       
     }if(card.charAt(0) == '4'){
+         $('#bank').selectpicker('val', "Visa");
       $('#bank').selectpicker('val', "Discover");  
     }
-    if(card.charAt(0) == '5'){
+    if(card.startsWith('51')|| card.startsWith('52') || card.startsWith('53') || card.startsWith('54') || card.startsWith('55')){
       $('#bank').selectpicker('val', "Mastercard");  
     }
+        if((card == '222100')){
+        $('#bank').selectpicker('val', "Mastercard");
+            alert("mastercard");
+        }
     if(card.charAt(0) == '6'){
-      $('#bank').selectpicker('val', "Visa");  
+      $('#bank').selectpicker('val', "Discover"); 
     }
     
    
