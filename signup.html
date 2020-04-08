@@ -210,23 +210,32 @@
               <div id="paymentinfobody" class="collapse" data-parent="#billing">
         <div class="card-body">
                <!--card no and name row -->
-            <div class="form-row justify-content-center w-100 card-wrapper mb-5"></div>
+            <div id="cardGUI" class="form-row justify-content-center w-100 card-wrapper mb-5"></div>
                 <div class="form-row justify-content-center w-100 mb-5">
                       <div class="form-group col-12 col-md-5">
     <label for="cardName" >Name on Card <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the full name listed on your credit/debit card."></i></label>
       <input type="text" class="form-control borders"  id="cardName" placeholder="e.g. John Doe">
     </div>
-    <div class="form-group col-md-5 col-9">
+    <div class="cardno form-group col-md-5 col-9">
     <label for="card">Card Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the valid 16 digit number on your credit/debit card."></i></label>
- <input class="form-control borders" type="tel" id="card" placeholder="e.g. 1234 5678 9012 3456">
+ <input class="form-control borders" type="tel" id="card" pattern=""placeholder="e.g. 1234 5678 9012 3456">
+        <div class="invalid-feedback">
+        Please make sure your are entering a valid American Express, Discover, Mastercard, or Visa credit/debit card
+      </div>
                      </div>
                      <div class="form-group col-3 col-md-2">
       <label for="cv">CVV <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the 3 or 4 digit security code at the back of your credit/debit card."></i></label>
      <input class="form-control borders" type="text" id="cv" placeholder="e.g. 000">
+                         <div class="invalid-feedback">
+                         Please enter a valid 3 or 4 digit security code on the back of your card
+                         </div>
     </div>
         <div class="form-group col-12 col-sm-5 col-md-3 mr-auto mt-2">
     <label for="exp">Expiration Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
-            <input class="form-control borders" type="tel"  id="exp" placeholder="MM/YYYY"> 
+            <input class="form-control borders" type="tel"  id="exp"  data-mask="00 / 00" placeholder="MM/YY"> 
+            <div class="invalid-feedback">
+    Please make sure your are entering a valid expiration date from your credit/debit card
+      </div>
                      </div>
 		 <div class="form-group">
 		<select class="form-control selectpicker" id="bank" >
@@ -619,9 +628,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
         
     <script src="js/bootnavbar.js" ></script>
-   <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js"></script>
        
-
+<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js" ></script>
              
            <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
 <script>
@@ -670,7 +678,7 @@
              
     <script type="text/javascript"> 
     $('#bank').selectpicker('hide');
-
+var cardiden = false;
    bootstrapValidate("#fname", "required: Please enter your first name");
     bootstrapValidate("#lname", "required: Please enter your last name");
     bootstrapValidate("#email", "required: Please enter your email");
@@ -680,42 +688,88 @@
     bootstrapValidate('#pass2', 'matches:#pass1: Your passwords should match');
     bootstrapValidate("#pass2", "required: Please reenter your password");
  bootstrapValidate("#phone", "regex:[0-9]{3}-[0-9]{3}-[0-9]{4}:Please enter a valid phone number");
-         bootstrapValidate("#exp", "min:9:Please enter a valid expiration date");
-bootstrapValidate("#exp", "regex:^(0[123456789]|10|11|12) ([/]) (20[2-9][0-9])$:Please enter a valid expiration date");
-bootstrapValidate("#cv", "min:3: Please enter a valid 3 or 4 digit security code on the back of your card");
-	    bootstrapValidate("#cv", "max:4:Please enter a valid 3 or 4 digit security code on the back of your card");
-	    bootstrapValidate("#cv", "numeric:Please enter a valid 3 or 4 digit security code on the back of your card");
-	    
-	 
-
-        
-$('#card').change(function(){
-    var card = document.getElementById("card").value;
   
-    if(card.startsWith('37') || card.startsWith('34')){
-      $('#bank').selectpicker('val', "American Express");
-       
-    }if(card.charAt(0) == '4'){
+
+
+  
+    $('#cv').keyup(function(){
+       var cv = document.getElementById("cv").value;  
+        if($("#bank").val() == "American Express" && (cv.length == 4))
+            (document.getElementById("cv")).classList.remove("is-invalid");
+        
+        else if(($("#bank").val() == "Discover" || $("#bank").val() == "Mastercard" || $("#bank").val() == "Visa") && (cv.length >= 3))
+               (document.getElementById("cv")).classList.remove("is-invalid"); 
+            
+            
+            else
+              (document.getElementById("cv")).classList.add("is-invalid");  
+ 
+    });
+         
+    
+
+   
+	 
+$('#exp').keyup(function(){
+    var exp = document.getElementById("exp").value;  
+     
+if(exp.length == 7){
+
+    var splitDate = exp.split("/");
+     
+    splitDate[0] =  splitDate[0].replace(/ /g, "");
+    splitDate[1] =  splitDate[1].replace(/ /g, "");
+
+    var cardDate = "20"+splitDate[1]+"-"+splitDate[0];
+    var date = new Date(cardDate).getTime(); 
+    if(date > (new Date().getTime())){
+       (document.getElementById("exp")).classList.remove("is-invalid");
+    }
+    else{
+       (document.getElementById("exp")).classList.add("is-invalid");  
+    }
+}
+    else{
+        (document.getElementById("exp")).classList.add("is-invalid");
+    }
+});
+        
+$('#card').keyup(function(){
+   
+    var card = document.getElementById("card").value;
+    if((new RegExp('^(34|37)[0-9 ]{15}$')).test(card)){
+        cardiden = true;
+    $('#bank').selectpicker('val', "American Express");
+    }
+    if ((new RegExp('^(4)([0-9 ]{15}|[0-9 ]{18}|[0-9 ]{22})$')).test(card))
+    {
+        cardiden = true;
          $('#bank').selectpicker('val', "Visa");
-      $('#bank').selectpicker('val', "Discover");  
     }
-    if(card.startsWith('51')|| card.startsWith('52') || card.startsWith('53') || card.startsWith('54') || card.startsWith('55')){
-      $('#bank').selectpicker('val', "Mastercard");  
-    }
-        if((card == '222100')){
-        $('#bank').selectpicker('val', "Mastercard");
-            alert("mastercard");
-        }
-    if(card.charAt(0) == '6'){
-      $('#bank').selectpicker('val', "Discover"); 
+     if (((new RegExp('^(5[1-5]|677189)|^(222[1-9]|2[3-6][0-9][0-9]|27[0-1][0-9]|2720)')).test(card)) && card.length == 19)
+    {
+        cardiden = true;
+           $('#bank').selectpicker('val', "Mastercard");
     }
     
    
-    
-    
-    
-});
+ 
+      	
+    if(((new RegExp('^(6011|65|64[4-9]|622)')).test(card))&& card.length == 19){
         
+            $('#bank').selectpicker('val', "Discover");
+        cardiden = true;
+    }
+     if(cardiden == false){
+        (document.getElementById("card")).classList.add("is-invalid");
+         
+    }
+    else{
+        (document.getElementById("card")).classList.remove("is-invalid");
+        cardiden = false;
+    }
+   });
+  
 $(document).ready(function() {
    
   $('#register').on('submit', function(e){
@@ -733,6 +787,7 @@ $(function () {
     </script>
         </div>
 <script src="plugins/card.js"></script>
+
     <script>
     var card = new Card({
     // a selector or DOM element for the form where users will
