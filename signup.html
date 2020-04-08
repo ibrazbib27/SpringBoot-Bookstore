@@ -1,3 +1,4 @@
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +13,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
  
   <link rel="stylesheet" href="css/bootnavbar.css">
-  <link rel="stylesheet" href="CSS/custom.css">
+  <link rel="stylesheet" href="custom.css">
     <script src="plugins/cardvalidator/jquery.creditCardValidator.js"></script>
 		</head>
     <body>         
@@ -123,38 +124,50 @@
                </div></div>
                  </div>
            <div class="card-body">
-    <div class="form-row w-100 justify-content-xl-between">
-    <div class="form-group col-12 col-md-6 col-xl-3 ">
-    <label for="fName"  class="required">First Name <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top" title="Must not be blank. Please enter your first name please."></i></label>
+    <div class="form-row w-100 justify-content-lg-around justify-content-md-between">
+    <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+    <label for="fName"  class="required">First Name <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right" title="Must not be blank. Please enter your first name please."></i></label>
       <input type="text" class="form-control borders" placeholder="e.g. John" id="fName"  required>
+        <div class="invalid-tooltip">
+        Please enter your first name
+        </div>
     </div>
-    <div class="form-group col-12 col-md-6 col-xl-3">
-    <label for="lName" class="required">Last Name <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top" title="Must not be blank. Please enter your last name please."></i></label>
+    <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+    <label for="lName" class="required">Last Name <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right" title="Must not be blank. Please enter your last name please."></i></label>
       <input type="text" class="form-control borders" placeholder="e.g. Doe" id="lName" required>
+        <div class="invalid-tooltip">
+        Please enter your last name
+        </div>
         </div>
         
-        <div class="form-group col-12 col-xl-6">
-        <label for="email"class="required" >Email <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Must not be blank. Please enter a unique email. You&#039;ll use this when you log in and if you ever need to reset your password."></i></label>
-      <input type="email" class="form-control borders" placeholder="e.g. johndoe@mail.com" id="email" required>
-    </div>
   </div>
-           
-            
-           
-     <div class="form-row w-100 pt-1 pb-5 justify-content-xl-between">
-     <div class="form-group col-12 col-md-4 col-xl-3">
-        <label for="pass1" class="required">Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="bottom"  title="Must not be blank. Please enter a valid password meeting the following criteria: The password must be a minimum of 8 characters long, and it must contain at least one upper-case letter ([A-Z]), one lower-case letter ([a-z]), one number ([0-9]), and one special character ( !&quot;#$%&'()*+,-./:;<=>?@[\]^_`{|}~)."></i></label>
-      <input type="password" class="form-control borders" placeholder="8 Characters Minimum" id="pass1"  required>
-    </div>
-    <div class="form-group col-12 col-md-4 col-xl-3">
-        <label for="pass2" class="required">Retype Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Must not be blank. Please reenter your password. Passwords must be matching."></i></label>
-      <input type="password" class="form-control borders" placeholder="Confirm Password" id="pass2"  data-toggle="tooltip" data-placement="bottom" required>
        
+               <div class="form-row w-100 mt-md-5 justify-content-center">
+             <div class="form-group col-12  col-lg-10 mb-5 mb-md-0">
+        <label for="email"class="required" >Email <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please enter a unique email. You&#039;ll use this when you log in and if you ever need to reset your password."></i></label>
+      <input type="email" class="form-control borders" placeholder="e.g. johndoe@mail.com" id="email" required>
+    <div class="invalid-tooltip">
+        Please enter a valid email address
+        </div>
     </div>
-     <div class="form-group col-12 col-md-4 col-xl-4">
-    <label for="phone">Phone Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="This field is optional. Please enter a valid 10 digit phone number."></i></label>
-<input type="tel" id="phone" data-mask="000-000-0000" class="form-control borders" placeholder="e.g. 111-111-1111" name="phone" >
-  </div>
+               </div>
+           
+     <div class="form-row w-100 mt-md-5 pb-5 justify-content-lg-around justify-content-md-between">
+     <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+        <label for="pass1" class="required">Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please enter a valid password meeting the following criteria: The password must be a minimum of 8 characters long, and it must contain at least one upper-case letter ([A-Z]), one lower-case letter ([a-z]), one number ([0-9]), and one special character ( !&quot;#$%&'()*+,-./:;<=>?@[\]^_`{|}~)."></i></label>
+      <input type="password" class="form-control borders" placeholder="8 Characters Minimum" id="pass1"  required>
+          <div class="invalid-tooltip">
+        Please enter a valid email password
+        </div>
+    </div>
+    <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+        <label for="pass2" class="required">Retype Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please reenter your password. Passwords must be matching."></i></label>
+      <input type="password" class="form-control borders" placeholder="Confirm Password" id="pass2"  data-toggle="tooltip" data-placement="bottom" required>
+         <div class="invalid-tooltip">
+        Please makse the passwords  are matching
+        </div>
+    </div>
+     
            </div>
                  </div></div>
            
@@ -162,7 +175,7 @@
     
            <div id="shipping" class="card mt-5">
       <div class="card-header">
-           <a class="card-link" data-toggle="collapse" href="#shipinfobody">
+           <a class="card-link" data-toggle="collapse" href="#shipinfobody" data-toggle="tooltip" data-placement="top" title="If you wish to add your shipping information, click the ">
            <div class="form-row justify-content-center w-100">
                <div class="form-group col-12">
                    <span class="row w-100 justify-content-center"><h3 class="ml-auto">Shipping Details</h3> <i class="ml-auto fas fa-caret-down fa-2x ml-auto text-dark"></i></span>
@@ -172,29 +185,32 @@
                </div>
         <div id="shipinfobody" class="collapse" data-parent="#shipping">
         <div class="card-body">
-        <div class="form-row">
-    <div class="form-group col-12">
-        <label for="add">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter a valid street address for your shipping address."></i></label>
+       <div class="form-row w-100 justify-content-center">
+             <div class="form-group col-12  col-lg-10 mb-5 mb-md-0">
+        <label for="add">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid street address for your shipping address."></i></label>
       <input type="text" class="form-control borders justify-content-left" placeholder="e.g. 123 Main St." id="add">  
     </div>
   </div>
-     <div class="form-row justify-content-lg-between pt-1 pb-5">
-    <div class="form-group col-12 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-      <label for="city">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter a valid city for your shipping address."></i></label>
+     <div class="form-row w-100 mt-md-5 pb-5 justify-content-center">
+         <div class=" w-100 col-12 col-lg-10 px-0">
+        <div class="row w-100 justify-content-between m-0">
+    <div class="w-100 form-group col-12 col-md pl-md-1 mb-5 mb-md-0 px-1">
+      <label for="city">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid city for your shipping address."></i></label>
       <input type="text" class="form-control borders" id="city" placeholder="e.g. Atlanta">
     </div>
-    <div class="form-group col-7 col-xl-3 col-lg-3 col-md-3 col-sm-7">
-      <label for="state">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter a valid state for your shipping address."></i></label>
+    <div class="w-100 form-group col-12 col-sm-7 col-md mb-5 mb-md-0 px-1">
+      <label for="state">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid state for your shipping address."></i></label>
       <select id="state" class="form-control selectpicker" title="Choose a State"  data-live-search="true" data-size="3">
        <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
       </select>
     </div>
-    <div class="form-group col-5 col-xl-3 col-lg-3 col-md-3 col-sm-5">
-      <label for="zip">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title=" Please enter a valid zip code for your shipping address."></i></label>
+    <div class="w-100 form-group col-12 col-sm-5 col-md pr-md-1 mb-5 mb-md-0 px-1">
+      <label for="zip">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title=" Please enter a valid zip code for your shipping address."></i></label>
       <input type="tel" class="form-control borders" id="zip" placeholder="e.g. 30022">
     </div>
+         </div>  
   </div>
-            </div></div></div>
+            </div></div></div></div>
            
                 <!--Billing heading row -->
           <div id="billing" class="card my-5">
@@ -211,65 +227,85 @@
         <div class="card-body">
                <!--card no and name row -->
             <div id="cardGUI" class="form-row justify-content-center w-100 card-wrapper mb-5"></div>
-                <div class="form-row justify-content-center w-100 mb-5">
-                      <div class="form-group col-12 col-md-5">
-    <label for="cardName" >Name on Card <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the full name listed on your credit/debit card."></i></label>
+               <div class="form-row w-100 justify-content-center">
+         <div class=" w-100 col-12 col-lg-10 px-0">
+        <div class="row w-100 justify-content-between m-0">
+                    
+                      <div class="form-group col-12 col-md-4 px-1 mb-5 mb-md-0">
+                    
+    <label for="cardName" >Name on Card <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the full name listed on your credit/debit card."></i></label>
       <input type="text" class="form-control borders"  id="cardName" placeholder="e.g. John Doe">
     </div>
-    <div class="cardno form-group col-md-5 col-9">
-    <label for="card">Card Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the valid 16 digit number on your credit/debit card."></i></label>
+    <div class="cardno form-group col-12 col-md-6 mb-5 mb-md-0 px-1">
+    <label for="card">Card Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the valid 16 digit number on your credit/debit card."></i></label>
  <input class="form-control borders" type="tel" id="card" pattern=""placeholder="e.g. 1234 5678 9012 3456">
-        <div class="invalid-feedback">
+        <div class="invalid-tooltip">
         Please make sure your are entering a valid American Express, Discover, Mastercard, or Visa credit/debit card
       </div>
                      </div>
-                     <div class="form-group col-3 col-md-2">
-      <label for="cv">CVV <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the 3 or 4 digit security code at the back of your credit/debit card."></i></label>
+                          </div></div></div>
+            
+            
+                    <div class="form-row w-100 justify-content-center mb-5 pb-5">
+         <div class=" w-100 col-12 col-lg-10 px-0">
+        <div class="row w-100 justify-content-between m-0">
+            <div class="col-12 col-md-4 px-1 "></div>
+          <div class=" form-group col-12 col-md-6 mb-3 mb-md-0 mt-md-5 px-1">
+               <div class="row w-100 justify-content-between m-0">
+                     <div class="form-group col mb-3 mb-md-0 px-1">
+      <label for="cv">CVV <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the 3 or 4 digit security code at the back of your credit/debit card."></i></label>
      <input class="form-control borders" type="tel" id="cv" placeholder="e.g. 000">
-                         <div class="invalid-feedback">
+                         <div class="invalid-tooltip">
                          Please enter a valid 3 or 4 digit security code on the back of your card
                          </div>
     </div>
-        <div class="form-group col-12 col-sm-5 col-md-3 mr-auto mt-2">
-    <label for="exp">Expiration Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
+        <div class="form-group mb-5 mb-md-0 col px-1">
+    <label for="exp">Exp. Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
             <input class="form-control borders text-center" type="tel"  id="exp"  data-mask="00 / 00" placeholder="MM/YY"> 
-            <div class="invalid-feedback">
+            <div class="invalid-tooltip">
     Please make sure your are entering a valid expiration date from your credit/debit card
       </div>
                      </div>
 		 <div class="form-group">
 		<select class="form-control selectpicker" id="bank" >
+            <option value="none"></option>
             <option value="American Express"></option>
             <option value="Discover"></option>
             <option value="Mastercard"></option>
             <option value="Visa"></option>
             </select>
+              </div>
 				</div>
-           </div>
+            </div></div></div></div>
            
 
-                <div class="form-row">
-    <div class="form-group col-12">
-        <label for="addbill">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="This field is optional"></i></label>
-      <input type="text" class="form-control borders" placeholder="e.g. 123 Main St." id="addbill">  
+       
+    <div class="form-row w-100 justify-content-center mt-5">
+             <div class="form-group col-12  col-lg-10 mb-5 mb-md-0">
+        <label for="addbill">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid street address for your shipping address."></i></label>
+      <input type="text" class="form-control borders justify-content-left" placeholder="e.g. 123 Main St." id="addbill">  
     </div>
   </div>
-     <div class="form-row pt-1 pb-5">
-    <div class="form-group col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-      <label for="citybill">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="This field is optional"></i></label>
+     <div class="form-row w-100 mt-md-5 pb-5 justify-content-center">
+         <div class=" w-100 col-12 col-lg-10 px-0">
+        <div class="row w-100 justify-content-between m-0">
+    <div class="w-100 form-group col-12 col-md pl-md-1 mb-5 mb-md-0 px-1 ">
+      <label for="citybill">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid city for your shipping address."></i></label>
       <input type="text" class="form-control borders" id="citybill" placeholder="e.g. Atlanta">
     </div>
-    <div class="form-group col-7 col-xl-3 col-lg-3 col-md-3 col-sm-7">
-      <label for="statebill">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="This field is optional"></i></label>
+    <div class="w-100 form-group col-12 col-sm-7 col-md mb-5 mb-md-0 px-1">
+      <label for="statebill">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid state for your shipping address."></i></label>
       <select id="statebill" class="form-control selectpicker" title="Choose a State"  data-live-search="true" data-size="3">
-        <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
+       <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
       </select>
     </div>
-    <div class="form-group col-5 col-xl-3 col-lg-3 col-md-3 col-sm-5">
-      <label for="zipbill">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="top"  title="This field is optional"></i></label>
+    <div class="w-100 form-group col-12 col-sm-5 col-md pr-md-1 mb-5 mb-md-0 px-1 ">
+      <label for="zipbill">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title=" Please enter a valid zip code for your shipping address."></i></label>
       <input type="tel" class="form-control borders" id="zipbill" placeholder="e.g. 30022">
     </div>
+         </div>  
   </div>
+            </div>
                   </div></div></div>
            
                 <div class="form-row mt-3" >
@@ -679,17 +715,63 @@
     <script type="text/javascript"> 
     $('#bank').selectpicker('hide');
 var cardiden = false;
-   bootstrapValidate("#fname", "required: Please enter your first name");
-    bootstrapValidate("#lname", "required: Please enter your last name");
-    bootstrapValidate("#email", "required: Please enter your email");
-    bootstrapValidate("#email", "email: Please enter a valid email address");
-    bootstrapValidate("#pass1", "required: Please enter a valid password")
-    bootstrapValidate("#pass1", "regex:^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$:Please enter a valid password");
-    bootstrapValidate('#pass2', 'matches:#pass1: Your passwords should match');
-    bootstrapValidate("#pass2", "required: Please reenter your password");
- bootstrapValidate("#phone", "regex:[0-9]{3}-[0-9]{3}-[0-9]{4}:Please enter a valid phone number");
   
+   
+   
+        
 
+        
+   $('#fName').keyup(function(){
+       var first = document.getElementById("fName").value; 
+       if (first.length == 0 )
+           (document.getElementById("fName")).classList.add("is-invalid");
+       else
+           (document.getElementById("fName")).classList.remove("is-invalid"); 
+
+   });
+   $('#lName').keyup(function(){
+       var first = document.getElementById("lName").value; 
+       if (first.length == 0 )
+           (document.getElementById("lName")).classList.add("is-invalid");
+       else
+           (document.getElementById("lName")).classList.remove("is-invalid"); 
+
+   });
+    $('#email').keyup(function(){
+       var first = document.getElementById("email").value; 
+       if (first.length == 0 )
+           (document.getElementById("email")).classList.add("is-invalid");
+        else if (((new RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3}')).test(first)) == false)
+           (document.getElementById("email")).classList.add("is-invalid");
+       else
+           (document.getElementById("email")).classList.remove("is-invalid"); 
+
+   });
+      $('#pass1').keyup(function(){
+       var first = document.getElementById("pass1").value; 
+       if (first.length == 0 )
+           (document.getElementById("pass1")).classList.add("is-invalid");
+       else if (((new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$')).test(first)) == false)
+           (document.getElementById("pass1")).classList.add("is-invalid");
+       else
+           (document.getElementById("pass1")).classList.remove("is-invalid"); 
+
+   });
+  $('#pass2').keyup(function(){
+       var first = document.getElementById("pass2").value; 
+       if (first.length == 0 )
+           (document.getElementById("pass2")).classList.add("is-invalid");
+       else
+           (document.getElementById("pass2")).classList.remove("is-invalid"); 
+      
+      
+      
+      if ((document.getElementById("pass1").value) != first)
+           (document.getElementById("pass2")).classList.add("is-invalid");
+       else
+           (document.getElementById("pass2")).classList.remove("is-invalid"); 
+
+   });
 
   
     $('#cv').keyup(function(){
@@ -698,11 +780,11 @@ var cardiden = false;
             (document.getElementById("cv")).classList.remove("is-invalid");
         
         else if(($("#bank").val() == "Discover" || $("#bank").val() == "Mastercard" || $("#bank").val() == "Visa") && (cv.length >= 3))
-               (document.getElementById("cv")).classList.remove("is-invalid"); 
+            (document.getElementById("cv")).classList.remove("is-invalid"); 
+         
             
-            
-            else
-              (document.getElementById("cv")).classList.add("is-invalid");  
+         else
+            (document.getElementById("cv")).classList.add("is-invalid");  
  
     });
          
