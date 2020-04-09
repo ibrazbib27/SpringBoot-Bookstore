@@ -13,7 +13,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
  
   <link rel="stylesheet" href="css/bootnavbar.css">
-  <link rel="stylesheet" href="CSS/custom.css">
+  <link rel="stylesheet" href="custom.css">
     <script src="plugins/cardvalidator/jquery.creditCardValidator.js"></script>
 		</head>
     <body>         
@@ -115,7 +115,7 @@
                <div class="form-group col-12">
            <small><span class="required"></span> Indicates a required field</small>
                 </div></div>
-             <div class="card">
+             <div id="user" class="card">
       <div class="card-header">
            <div class="form-row justify-content-center w-100">
                <div class="form-group col-12">
@@ -128,14 +128,14 @@
     <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
     <label for="fName"  class="required">First Name <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right" title="Must not be blank. Please enter your first name please."></i></label>
       <input type="text" class="form-control borders" placeholder="e.g. John" id="fName"  required>
-        <div class="invalid-tooltip">
+        <div class="invalid-tooltip w-75 text-center">
         Please enter your first name
         </div>
     </div>
     <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
     <label for="lName" class="required">Last Name <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right" title="Must not be blank. Please enter your last name please."></i></label>
       <input type="text" class="form-control borders" placeholder="e.g. Doe" id="lName" required>
-        <div class="invalid-tooltip">
+        <div class="invalid-tooltip w-75 text-center">
         Please enter your last name
         </div>
         </div>
@@ -146,7 +146,7 @@
              <div class="form-group col-12  col-lg-10 mb-5 mb-md-0">
         <label for="email"class="required" >Email <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please enter a unique email. You&#039;ll use this when you log in and if you ever need to reset your password."></i></label>
       <input type="email" class="form-control borders" placeholder="e.g. johndoe@mail.com" id="email" required>
-    <div class="invalid-tooltip">
+    <div class="invalid-tooltip w-75 text-center">
         Please enter a valid email address
         </div>
     </div>
@@ -156,14 +156,14 @@
      <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
         <label for="pass1" class="required">Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please enter a valid password meeting the following criteria: The password must be a minimum of 8 characters long, and it must contain at least one upper-case letter ([A-Z]), one lower-case letter ([a-z]), one number ([0-9]), and one special character ( !&quot;#$%&'()*+,-./:;<=>?@[\]^_`{|}~)."></i></label>
       <input type="password" class="form-control borders" placeholder="8 Characters Minimum" id="pass1"  required>
-          <div class="invalid-tooltip">
+          <div class="invalid-tooltip w-75 text-center">
         Please enter a valid email password
         </div>
     </div>
     <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
         <label for="pass2" class="required">Retype Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please reenter your password. Passwords must be matching."></i></label>
       <input type="password" class="form-control borders" placeholder="Confirm Password" id="pass2"  data-toggle="tooltip" data-placement="bottom" required>
-         <div class="invalid-tooltip">
+         <div class="invalid-tooltip w-75 text-center">
         Please makse the passwords  are matching
         </div>
     </div>
@@ -201,6 +201,7 @@
     <div class="w-100 form-group col-12 col-sm-7 col-md mb-5 mb-md-0 px-1">
       <label for="state">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid state for your shipping address."></i></label>
       <select id="state" class="form-control selectpicker" title="Choose a State"  data-live-search="true" data-size="3">
+        <option value="">--</option>
        <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
       </select>
     </div>
@@ -239,7 +240,7 @@
     <div class="cardno form-group col-12 col-md-6 mb-5 mb-md-0 px-1">
     <label for="card">Card Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the valid 16 digit number on your credit/debit card."></i></label>
  <input class="form-control borders" type="tel" id="card" pattern=""placeholder="e.g. 1234 5678 9012 3456">
-        <div class="invalid-tooltip">
+        <div class="invalid-tooltip w-75 text-center">
         Please make sure your are entering a valid American Express, Discover, Mastercard, or Visa credit/debit card
       </div>
                      </div>
@@ -255,14 +256,14 @@
                      <div class="form-group col mb-3 mb-md-0 px-1">
       <label for="cv">CVV <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the 3 or 4 digit security code at the back of your credit/debit card."></i></label>
      <input class="form-control borders" type="tel" id="cv" placeholder="e.g. 000">
-                         <div class="invalid-tooltip">
+                         <div class="invalid-tooltip w-75 text-center">
                          Please enter a valid 3 or 4 digit security code on the back of your card
                          </div>
     </div>
         <div class="form-group mb-5 mb-md-0 col px-1">
     <label for="exp">Exp. Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
             <input class="form-control borders text-center" type="tel"  id="exp"  data-mask="00 / 00" placeholder="MM/YY"> 
-            <div class="invalid-tooltip">
+            <div class="invalid-tooltip w-75 text-center">
     Please make sure your are entering a valid expiration date from your credit/debit card
       </div>
                      </div>
@@ -296,6 +297,7 @@
     <div class="w-100 form-group col-12 col-sm-7 col-md mb-5 mb-md-0 px-1">
       <label for="statebill">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid state for your shipping address."></i></label>
       <select id="statebill" class="form-control selectpicker" title="Choose a State"  data-live-search="true" data-size="3">
+           <option value="">--</option>
        <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
       </select>
     </div>
@@ -308,22 +310,22 @@
             </div>
                   </div></div></div>
            
-                <div class="form-row mt-3" >
+                <div class="form-row mt-3 " >
     <div class="form-group col-12">
-    <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-      <label class="form-check-label" for="invalidCheck">
-        Agree to the terms and conditions
+         
+      <label class="required" for="invalidCheck">
+        Agree to the Terms and Conditions
       </label>
-       <div class="small text-danger help-block">
-        You must agree before submitting.
-      </div>
-    </div>
+         <div class="invalid-tooltip w-100 ">
+        You must Agree to the Terms and Condition
+        </div>
+   
   </div>
                 </div>
-      <div class="form-row">
+      <div class="form-row mt-5">
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <button class="btn btn-primary" type="submit" >Create Account</button>
+  <button class="btn btn-primary btn-lg" type="submit" >Create Account</button>
                 </div>
                 </div>
   </form>
@@ -852,19 +854,106 @@ $('#card').keyup(function(){
     }
    });
   
+   
 $(document).ready(function() {
    
   $('#register').on('submit', function(e){
+      var validationcount = 0;
+      var required = false;
+     $("#user input[type=text]").each(function() {
+            if((this.value).length == 0) {
+              this.classList.add("is-invalid");
+              required = true;
+            }
+         else{
+            this.classList.remove("is-invalid"); 
+         }
+
+        });
+       $("#user input[type=email]").each(function() {
+            if((this.value).length == 0) {
+              this.classList.add("is-invalid");
+              required = true;
+            }
+         else{
+            this.classList.remove("is-invalid"); 
+         }
+
+        });
+       $("#user input[type=password]").each(function() {
+            if((this.value).length == 0) {
+              this.classList.add("is-invalid");
+              required = true;
+            }
+         else{
+            this.classList.remove("is-invalid"); 
+         }
+
+        });
+       if ( document.getElementById("invalidCheck").checked == false){
+            (document.getElementById("invalidCheck")).classList.add("is-invalid");
+              required = true;
+       }
+      
+      if(required == true){
+          e.preventDefault();
+      
+          $('#register input').each(function(){
+               if(this.className.includes('is-invalid')){
+                  this.focus();
+                  this.focus();
+                  return false;
+              }
+             
+             
+ 
+});
+          
+      }
+      
+      else{
+      
+      
+        $("#shipping input[type=text]").each(function() {
+            if((this.value).length > 0) {
+               validationcount++;
+            }
+        });
+      if((($( "#state" ).val()).length) > 0 )
+            validationcount++;
+      
+      $("#shipping input[type=tel]").each(function() {
+            if((this.value).length > 0) {
+                validationcount++;
+            }
+        });
+
+
+    
+      if(validationcount == 0 || validationcount == 4){
+          (document.getElementById("state")).classList.remove("is-invalid");
+           (document.getElementById("add")).classList.remove("is-invalid");
+          (document.getElementById("zip")).classList.remove("is-invalid");
+           (document.getElementById("city")).classList.remove("is-invalid");
       $('#signupConfirmation').modal('show');
-      e.preventDefault();
-  });
+      }
+      else{
+          (document.getElementById("state")).classList.add("is-invalid");
+           (document.getElementById("add")).classList.add("is-invalid");
+          (document.getElementById("zip")).classList.add("is-invalid");
+           (document.getElementById("city")).classList.add("is-invalid");
+      }
+       e.preventDefault();
+      }
+ 
 });       
 $('#filterSearch').on('shown.bs.modal', function () {
   $(this).find('input:first').trigger('focus')
 })
-$(function () {
+        $(function () {
   $('[data-toggle="tooltip"]').tooltip()
-})
+});
+});
 
     </script>
         </div>
