@@ -776,7 +776,7 @@ var cardiden = false;
    });
 
   
-    $('#cv').keyup(function(){
+    $('#cv').change(function(){
        var cv = document.getElementById("cv").value;  
         if($("#bank").val() == "American Express" && (cv.length == 4))
             (document.getElementById("cv")).classList.remove("is-invalid");
@@ -794,7 +794,7 @@ var cardiden = false;
 
    
 	 
-$('#exp').keyup(function(){
+$('#exp').change(function(){
     var exp = document.getElementById("exp").value;  
      
 if(exp.length == 7){
@@ -818,9 +818,14 @@ if(exp.length == 7){
     }
 });
         
-$('#card').keyup(function(){
+$('#card').change(function(){
    
     var card = document.getElementById("card").value;
+    if(card.length == 0){
+        (document.getElementById("card")).classList.remove("is-invalid");
+        cardiden = true;
+    }
+        
     if((new RegExp('^(34|37)[0-9 ]{15}$')).test(card)){
         cardiden = true;
     $('#bank').selectpicker('val', "American Express");
@@ -854,7 +859,9 @@ $('#card').keyup(function(){
     }
    });
   
-   
+   $('#invalidCheck').click(function(){
+       (document.getElementById("invalidCheck")).classList.remove("is-invalid");
+   });
 $(document).ready(function() {
    
   $('#register').on('submit', function(e){
@@ -893,14 +900,13 @@ $(document).ready(function() {
        if ( document.getElementById("invalidCheck").checked == false){
             (document.getElementById("invalidCheck")).classList.add("is-invalid");
               required = true;
+       
        }
-      
       if(required == true){
           e.preventDefault();
       
           $('#register input').each(function(){
                if(this.className.includes('is-invalid')){
-                  this.focus();
                   this.focus();
                   return false;
               }
