@@ -57,7 +57,7 @@
     </ul>
 
     <ul class="navbar-nav justify-content-center nav-fill w-100  px-3">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link " href="https://ibrazbib27.github.io/cs4050/loggedin.html" onclick="document.body.style.cursor='wait'; return true;">Home<span class="sr-only">(current)</span></a>
       </li>
      <li class="nav-item ">
@@ -80,7 +80,7 @@
           <a class="nav-link vis" href="#" onclick="document.body.style.cursor='wait'; return true;">Login  <i class="fas fa-sign-in-alt text-white nav-link text-right"></i></a>
       </li>
         <li class="nav-item">
-          <a class="nav-link vis"  href="https://ibrazbib27.github.io/cs4050/signup.html" onclick="document.body.style.cursor='wait'; return true;">Sign Up  <i class="fas fa-user-plus text-white nav-link text-right"></i></a>
+          <a class="nav-link vis active"  href="https://ibrazbib27.github.io/cs4050/signup.html" onclick="document.body.style.cursor='wait'; return true;">Sign Up  <i class="fas fa-user-plus text-white nav-link text-right" style="opacity: 1.0"></i></a>
       </li>
 
     </ul>
@@ -119,7 +119,7 @@
       <div class="card-header">
            <div class="form-row justify-content-center w-100">
                <div class="form-group col-12">
-                   <h3 >User Details</h3>
+                   <h3 >User Details</h3><i class="far fa-question-circle text-black material-tooltip-smaller" data-toggle="tooltip" data-placement="bottom" title="Every field under this section is required."></i>
                    <hr>
                </div></div>
                  </div>
@@ -178,7 +178,8 @@
            <a class="card-link" data-toggle="collapse" href="#shipinfobody" data-toggle="tooltip" data-placement="top" title="If you wish to add your shipping information, click the ">
            <div class="form-row justify-content-center w-100">
                <div class="form-group col-12">
-                   <span class="row w-100 justify-content-center"><h3 class="ml-auto">Shipping Details</h3> <i class="ml-auto fas fa-caret-down fa-2x ml-auto text-dark"></i></span>
+                   <span class="row w-100 justify-content-center"><h3 class="ml-auto">Shipping Details</h3><i class="ml-auto fas fa-caret-down fa-2x ml-auto text-dark"></i></span>
+                   <span class="row w-100 justify-content-center">  <i class="far fa-question-circle text-dark material-tooltip-smaller" data-toggle="tooltip" data-placement="bottom" title="If you wish to update your shipping details here you must fill out every field in this section appropriately. If you wish to proceed and update your shipping information another time, then leave this section blank."></i></span>
                    <span class="row w-100 ml-auto mr-auto"><hr></span>
                </div></div>  
           </a>
@@ -188,26 +189,40 @@
        <div class="form-row w-100 justify-content-center">
              <div class="form-group col-12  col-lg-10 mb-5 mb-md-0">
         <label for="add">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid street address for your shipping address."></i></label>
-      <input type="text" class="form-control borders justify-content-left" placeholder="e.g. 123 Main St." id="add">  
+      <input type="text" class="form-control borders justify-content-left" placeholder="e.g. 123 Main St." id="add"> 
+     <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid street address
+        </div>
     </div>
   </div>
      <div class="form-row w-100 mt-md-5 pb-5 justify-content-center">
          <div class=" w-100 col-12 col-lg-10 px-0">
         <div class="row w-100 justify-content-between m-0">
     <div class="w-100 form-group col-12 col-md pl-md-1 mb-5 mb-md-0 px-1">
-      <label for="city">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid city for your shipping address."></i></label>
+      <label for="city">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid city for your shipping address. Put 'N/A' if not applicable."></i></label>
       <input type="text" class="form-control borders" id="city" placeholder="e.g. Atlanta">
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid city
+        </div>
     </div>
-    <div class="w-100 form-group col-12 col-sm-7 col-md mb-5 mb-md-0 px-1">
-      <label for="state">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid state for your shipping address."></i></label>
-      <select id="state" class="form-control selectpicker" title="Choose a State"  data-live-search="true" data-size="3">
-        <option value="">--</option>
+    <div class="w-100 form-group col-12 col-sm-7 col-md mb-5 mb-md-0 px-3">
+      <label for="state">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please select a valid state for your shipping address. Select '--' if not applicable"></i></label>
+      <select id="state" class="form-control custom-select borders" title="Choose a State"  >
+          <option value=" ">Select a State</option>
+        <option value="none">--</option>
        <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
       </select>
+       
+        <div id="st" class="invalid-tooltip w-100 text-center">
+        Please select a state
     </div>
+            </div>
     <div class="w-100 form-group col-12 col-sm-5 col-md pr-md-1 mb-5 mb-md-0 px-1">
-      <label for="zip">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title=" Please enter a valid zip code for your shipping address."></i></label>
+      <label for="zip">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title=" Please enter a valid zip code for your shipping address. Put 'N/A' if not applicable."></i></label>
       <input type="tel" class="form-control borders" id="zip" placeholder="e.g. 30022">
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid zip code
+        </div>
     </div>
          </div>  
   </div>
@@ -221,6 +236,7 @@
                <div class="form-group col-12">
                    
                   <span class="row w-100 justify-content-center"><h3 class="ml-auto"> Billing Details</h3> <i class="ml-auto fas fa-caret-down fa-2x ml-auto text-dark"></i></span>
+                   <span class="row w-100 justify-content-center">  <i class="far fa-question-circle text-dark material-tooltip-smaller" data-toggle="tooltip" data-placement="bottom" title="If you wish to update your billing details here you must fill out every field in this section appropriately. If you wish to proceed and update your billing information another time, then leave this section blank."></i></span>
                    <span class="row w-100 justify-content-center ml-auto mr-auto"><hr></span>
                </div></div> 
           </a></div>
@@ -238,7 +254,7 @@
       <input type="text" class="form-control borders"  id="cardName" placeholder="e.g. John Doe">
     </div>
     <div class="cardno form-group col-12 col-md-6 mb-5 mb-md-0 px-1">
-    <label for="card">Card Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the valid 16 digit number on your credit/debit card."></i></label>
+    <label for="card">Card Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the valid digits number on your American Express, Discover, Mastercard, or Visa credit/debit card."></i></label>
  <input class="form-control borders" type="tel" id="card" pattern=""placeholder="e.g. 1234 5678 9012 3456">
         <div class="invalid-tooltip w-100 text-center">
         Please make sure your are entering a valid American Express, Discover, Mastercard, or Visa credit/debit card
@@ -283,27 +299,41 @@
        
     <div class="form-row w-100 justify-content-center mt-5">
              <div class="form-group col-12  col-lg-10 mb-5 mb-md-0">
-        <label for="addbill">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid street address for your shipping address."></i></label>
-      <input type="text" class="form-control borders justify-content-left" placeholder="e.g. 123 Main St." id="addbill">  
+        <label for="addbill">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid street address for your billing address."></i></label>
+      <input type="text" class="form-control borders justify-content-left" placeholder="e.g. 123 Main St." id="addbill">
+                 <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid street address
+        </div>
     </div>
   </div>
      <div class="form-row w-100 mt-md-5 pb-5 justify-content-center">
          <div class=" w-100 col-12 col-lg-10 px-0">
         <div class="row w-100 justify-content-between m-0">
     <div class="w-100 form-group col-12 col-md pl-md-1 mb-5 mb-md-0 px-1 ">
-      <label for="citybill">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid city for your shipping address."></i></label>
+      <label for="citybill">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid city for your billing address. Put 'N/A' if not applicable."></i></label>
       <input type="text" class="form-control borders" id="citybill" placeholder="e.g. Atlanta">
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid city
+        </div>
     </div>
-    <div class="w-100 form-group col-12 col-sm-7 col-md mb-5 mb-md-0 px-1">
-      <label for="statebill">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid state for your shipping address."></i></label>
-      <select id="statebill" class="form-control selectpicker" title="Choose a State"  data-live-search="true" data-size="3">
-           <option value="">--</option>
+    <div class=" form-group col-12 col-sm-7 col-md mb-5 mb-md-0">
+      <label for="statebill">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please select a state for your billing address. Select '--' if not applicable."></i></label>
+      <select id="statebill" class="form-control borders custom-select" title="Choose a State" >
+           <option value=" ">Select a State</option>
+          <option value="none">--</option>
        <option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="California">California</option><option value="Colorado">Colorado</option><option value="Connecticut">Connecticut</option><option value="Delaware">Delaware</option><option value="District of Columbia">District of Columbia</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Hawaii">Hawaii</option><option value="Idaho">Idaho</option><option value="Illinois">Illinois</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Maryland">Maryland</option><option value="Massachusetts">Massachusetts</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Jersey">New Jersey</option><option value="New Mexico">New Mexico</option><option value="New York">New York</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Northern Marianas Islands">Northern Marianas Islands</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Oregon">Oregon</option><option value="Pennsylvania">Pennsylvania</option><option value="Puerto Rico">Puerto Rico</option><option value="Rhode Island">Rhode Island</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Vermont">Vermont</option><option value="Virginia">Virginia</option><option value="Virgin Islands">Virgin Islands</option><option value="Washington">Washington</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option>
       </select>
+        
+        <div id="stb" class="invalid-tooltip w-100">
+        Please select a state
+        </div>
     </div>
     <div class="w-100 form-group col-12 col-sm-5 col-md pr-md-1 mb-5 mb-md-0 px-1 ">
-      <label for="zipbill">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title=" Please enter a valid zip code for your shipping address."></i></label>
+      <label for="zipbill">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title=" Please enter a valid zip code for your biiling address. Put 'N/A' if not applicable."></i></label>
       <input type="tel" class="form-control borders" id="zipbill" placeholder="e.g. 30022">
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid zip code
+        </div>
     </div>
          </div>  
   </div>
@@ -315,7 +345,7 @@
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
          
       <label  for="invalidCheck">
-	      Agree to the Terms and Conditions<span class="text-danger"> *</span>
+          Agree to the <span class="text-primary">Terms and Conditions</span><span class="text-danger"> *</span>
       </label>
          <div class="invalid-tooltip w-100 ">
         You must Agree to the Terms and Condition
@@ -716,7 +746,6 @@
              
     <script type="text/javascript"> 
     $('#bank').selectpicker('hide');
-var cardiden = false;
   
    
    
@@ -776,9 +805,11 @@ var cardiden = false;
    });
 
   
-    $('#cv').change(function(){
+    $('#cv').keyup(function(){
        var cv = document.getElementById("cv").value;  
-        if($("#bank").val() == "American Express" && (cv.length == 4))
+          if(cv.length == 0)
+            (document.getElementById("cv")).classList.remove("is-invalid"); 
+        else if($("#bank").val() == "American Express" && (cv.length == 4))
             (document.getElementById("cv")).classList.remove("is-invalid");
         
         else if(($("#bank").val() == "Discover" || $("#bank").val() == "Mastercard" || $("#bank").val() == "Visa") && (cv.length >= 3))
@@ -786,7 +817,8 @@ var cardiden = false;
          
             
          else
-            (document.getElementById("cv")).classList.add("is-invalid");  
+             (document.getElementById("cv")).classList.add("is-invalid"); 
+            
  
     });
          
@@ -805,7 +837,8 @@ if(exp.length == 7){
     splitDate[1] =  splitDate[1].replace(/ /g, "");
 
     var cardDate = "20"+splitDate[1]+"-"+splitDate[0];
-    var date = new Date(cardDate).getTime(); 
+    var date = new Date(cardDate).getTime();
+    
     if(date > (new Date().getTime())){
        (document.getElementById("exp")).classList.remove("is-invalid");
     }
@@ -814,54 +847,58 @@ if(exp.length == 7){
     }
 }
     else{
-        (document.getElementById("exp")).classList.add("is-invalid");
+        
+       if(exp.length != 0)
+            (document.getElementById("exp")).classList.add("is-invalid"); 
+        else
+            (document.getElementById("exp")).classList.remove("is-invalid"); 
     }
 });
+
         
 $('#card').change(function(){
    
     var card = document.getElementById("card").value;
-    if(card.length == 0){
-        (document.getElementById("card")).classList.remove("is-invalid");
-        cardiden = true;
-    }
-        
-    if((new RegExp('^(34|37)[0-9 ]{15}$')).test(card)){
-        cardiden = true;
-    $('#bank').selectpicker('val', "American Express");
-    }
-    if ((new RegExp('^(4)([0-9 ]{15}|[0-9 ]{18}|[0-9 ]{22})$')).test(card))
-    {
-        cardiden = true;
-         $('#bank').selectpicker('val', "Visa");
-    }
-     if (((new RegExp('^(5[1-5]|677189)|^(222[1-9]|2[3-6][0-9][0-9]|27[0-1][0-9]|2720)')).test(card)) && card.length == 19)
-    {
-        cardiden = true;
-           $('#bank').selectpicker('val', "Mastercard");
-    }
-    
    
- 
-      	
-    if(((new RegExp('^(6011|65|64[4-9]|622)')).test(card))&& card.length == 19){
-        
-            $('#bank').selectpicker('val', "Discover");
-        cardiden = true;
-    }
-     if(cardiden == false){
-        (document.getElementById("card")).classList.add("is-invalid");
-         
-    }
-    else{
+    if(card.length == 0){
+         $('#bank').selectpicker('val', "none");
         (document.getElementById("card")).classList.remove("is-invalid");
-        cardiden = false;
     }
+    else if((new RegExp('^(34|37)[0-9 ]{15}$')).test(card))
+    $('#bank').selectpicker('val', "American Express");
+    else if ((new RegExp('^(4)([0-9 ]{15}|[0-9 ]{18}|[0-9 ]{22})$')).test(card))
+         $('#bank').selectpicker('val', "Visa");
+    
+     else if (((new RegExp('^(5[1-5]|677189)|^(222[1-9]|2[3-6][0-9][0-9]|27[0-1][0-9]|2720)')).test(card)) && card.length == 19)
+           $('#bank').selectpicker('val', "Mastercard");
+    else if(((new RegExp('^(6011|65|64[4-9]|622)')).test(card))&& card.length == 19)
+         $('#bank').selectpicker('val', "Discover");
+    else
+        $('#bank').selectpicker('val', "none");
+    
+     if($("#bank").val() == "none" && card.length != 0)
+        (document.getElementById("card")).classList.add("is-invalid"); 
+    else
+        (document.getElementById("card")).classList.remove("is-invalid");
+        
    });
+        
+    
+        
+        
+    
+        
+        
+        
+        
   
    $('#invalidCheck').click(function(){
        (document.getElementById("invalidCheck")).classList.remove("is-invalid");
    });
+        
+        
+        
+        
 $(document).ready(function() {
    
   $('#register').on('submit', function(e){
@@ -918,9 +955,80 @@ $(document).ready(function() {
       }
       
       else{
-      
-      
-        $("#shipping input[type=text]").each(function() {
+          var complete = false;
+          var billingval = 0;
+          var ship = false;
+          var bill = false;
+          var shippingval = 0;
+          (document.getElementById("statebill")).classList.remove("is-invalid");
+     
+          
+          $("#billing input").each(function() {
+                  this.classList.remove("is-invalid");
+               });
+          if($("#statebill").val() != " ")
+              billingval++;
+          $("#billing input").each(function() {
+        if((this.value).length > 0)
+            billingval++;
+    });
+          if(billingval > 0)
+          {
+              $("#billing input").each(function() {
+                if((this.value).length == 0)
+                this.classList.add("is-invalid");
+              });
+              if($("#statebill").val() == " "){
+                  (document.getElementById("statebill")).classList.add("is-invalid");
+                 
+              }
+               $("#billing .is-invalid").each(function() {
+                   (document.getElementById("statebill")).classList.add("is-invalid");
+                  this.focus();
+                  return false;
+               });
+          }
+          
+          
+          
+          
+          
+
+            (document.getElementById("state")).classList.remove("is-invalid");
+          (document.getElementById("st")).classList.remove("d-block");
+              $("#shipping .is-invalid").each(function() {
+                  this.classList.remove("is-invalid");
+               });
+          if($("#state").val() != " ")
+              shippingval++;
+          $("#shipping input").each(function() {
+        if((this.value).length > 0)
+            shippingval++;
+    });
+          if(shippingval > 0){
+              $("#shipping input").each(function() {
+                if((this.value).length == 0)
+                this.classList.add("is-invalid");
+              });
+            if($("#state").val() == " "){
+                 (document.getElementById("state")).classList.add("is-invalid");
+           
+            }
+               $("#shipping .is-invalid").each(function() {
+                  this.focus();
+                  return false;
+               });
+          } 
+          
+          if(shippingval == 4 || shippingval == 0)
+              ship = true;
+           if(billingval == 8 || billingval == 0)
+              bill = true;
+          if(bill == true && ship == true)
+           $('#signupConfirmation').modal('show');
+          
+      e.preventDefault();
+      /*  $("#shipping input[type=text]").each(function() {
             if((this.value).length > 0) {
                validationcount++;
             }
@@ -941,7 +1049,7 @@ $(document).ready(function() {
            (document.getElementById("add")).classList.remove("is-invalid");
           (document.getElementById("zip")).classList.remove("is-invalid");
            (document.getElementById("city")).classList.remove("is-invalid");
-      $('#signupConfirmation').modal('show');
+      
       }
       else{
           (document.getElementById("state")).classList.add("is-invalid");
@@ -950,8 +1058,8 @@ $(document).ready(function() {
            (document.getElementById("city")).classList.add("is-invalid");
       }
        e.preventDefault();
+      } */
       }
- 
 });       
 $('#filterSearch').on('shown.bs.modal', function () {
   $(this).find('input:first').trigger('focus')
