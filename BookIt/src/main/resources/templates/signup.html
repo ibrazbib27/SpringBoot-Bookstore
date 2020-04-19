@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>BookIt!</title>
+
+	 <script src="https://kit.fontawesome.com/a97b8a9b0d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+ 
+  <link rel="stylesheet" href="css/bootnavbar.css">
+  <link rel="stylesheet"  th:href="@{/CSS/custom.css}" />
+    <script src="plugins/cardvalidator/jquery.creditCardValidator.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		</head>
+    <body>         
+      
+        
+                  
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="bootnavbar">
+  <div class="navbar-toggler-right">
+   <button id="collapsebtn" class="navbar-toggler  py-2" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+
+
+
+
+  <div class="collapse navbar-collapse flex-column" id="navbar">
+<ul class="navbar-nav w-100 justify-content-center text-center px-3">
+     <a class="navbar-brand" href="#">
+    <span class="">BookIt!</span>
+  </a>
+      </ul>
+    <ul class="navbar-nav nav-fill w-100 justify-content-center ">
+      <li class="nav-item dropdown">
+        
+    <form class="form-inline w-100 d-flex justify-content-center">
+   <div class="input-group justify-content-center px-md-0 px-5" id="searchbox">
+  <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+  <div class="input-group-append">
+    <span class="input-group-text" id="searchIcon"><i class="fas fa-search bg-grey"
+        aria-hidden="true"></i></span>
+  </div>
+</div>
+  <div class="w-100"></div>
+          <a class="text-white text-center px-md-2 small py-2" id="advsearch"  onclick="focus()" data-target="#filterSearch" data-toggle="modal" >Advanced Search  <i class="fas fa-search-plus"></i></a>
+        
+          </form>
+      </li>
+  
+    </ul>
+
+    <ul class="navbar-nav justify-content-center nav-fill w-100  px-3">
+      <li class="nav-item">
+        <a class="nav-link " href="/" onclick="document.body.style.cursor='wait'; return true;">Home<span class="sr-only">(current)</span></a>
+      </li>
+     <li class="nav-item ">
+        <a class="nav-link" href="#" onclick="document.body.style.cursor='wait'; return true;">About</a>
+      </li>
+      
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Orders</a>
+        <div class="dropdown-menu w-100 text-center text-md-left " aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item w-100 pl-md-3 pl-lg-4 pr-lg-1 pr-md-0 " href="https://ibrazbib27.github.io/cs4050/checkout.html" onclick="document.body.style.cursor='wait'; return true;">Checkout  <i class="ic fas fa-shopping-basket float-md-right mr-3"></i></a>
+            
+          <a class="dropdown-item w-100 pl-md-3 pl-lg-4 pr-lg-1 pr-md-0 " href="https://ibrazbib27.github.io/cs4050/orderhistory.html" onclick="document.body.style.cursor='wait'; return true;">Order History  <i class="ic fas fa-history float-md-right mr-3"></i></a>
+            
+          <a class="dropdown-item w-100 pl-md-3 pl-lg-4 pr-lg-1 pr-md-0 " href="https://ibrazbib27.github.io/cs4050/cart.html" onclick="document.body.style.cursor='wait'; return true;">View Cart  <i class="ic fas fa-shopping-cart float-md-right mr-3"></i></a>
+        </div>
+      </li>
+        
+        
+          <li class="nav-item" >
+          <a class="nav-link vis" href="/login?" onclick="document.body.style.cursor='wait'; return true;">Login  <i class="fas fa-sign-in-alt text-white nav-link text-right"></i></a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link vis active"  href="/signup" onclick="document.body.style.cursor='wait'; return true;">Sign Up  <i class="fas fa-user-plus text-white nav-link text-right" style="opacity: 1.0"></i></a>
+      </li>
+
+    </ul>
+
+
+  </div>
+
+</nav>
+        
+         <div class="container-fluid h-100 justify-content-center">
+         <div id="body" class="row">
+            <div class="overlay"></div> 
+             
+             <div class="col-12 my-3 my-sm-4 my-md-5"></div>
+              <div class="col-12 my-md-5"></div>
+             <div class="col-12 my-md-5"></div>
+             
+          <div class="col-12 text-center align-self-center">    
+        <h1 id="pg2H1">Create a New Account</h1><p id="refresh" style="" th:text="${user}"></p>
+             </div>
+             
+            <div class="col-12 text-center align-self-center mt-5">   
+            <div class="jumbotron">      
+        <div class="row align-self-center">
+          <div class="col-12 align-self-center">
+            
+       <form id="register"   role="form"  class="justify-content-center w-100 needs-validation" target="form" th:action="@{/signupcomplete}" method="post" th:object="${user}"  novalidate>
+    
+            <div class="form-row justify-content-center w-100">
+               <div class="form-group col-12">
+           <h6 class="small "><a href="/login?" class="text-primary">Already a member? Sign In!</a></h6>
+                </div></div>
+            <div class="form-row justify-content-center w-100 pb-3">
+               <div class="form-group col-12">
+           <small><span class="required"></span> Indicates a required field</small>
+                </div></div>
+             <div id="user" class="card">
+      <div class="card-header">
+           <div class="form-row justify-content-center w-100"> 
+               <div class="form-group col-12">
+                   <h3 >User Details</h3><i class="far fa-question-circle text-black material-tooltip-smaller" data-toggle="tooltip" data-placement="bottom" title="Every field under this section is required."></i>
+                   <hr>
+               </div></div>
+                 </div>
+           <div class="card-body">
+    <div class="form-row w-100 justify-content-lg-around justify-content-md-between">
+    <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+    <label for="fName"  class="required">First Name <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right" title="Must not be blank. Please enter your first name please."></i></label>
+      <input type="text"  th:field="*{firstName}"  class="form-control borders" placeholder="e.g. John" id="fName"  >
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter your first name
+        </div>
+    </div>
+    <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+    <label for="lName"  class="required">Last Name <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right" title="Must not be blank. Please enter your last name please."></i></label>
+      <input type="text" th:field="*{lastName}" class="form-control borders" placeholder="e.g. Doe" id="lName" >
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter your last name
+        </div>
+        </div>
+        
+  </div>
+       
+               <div class="form-row w-100 mt-md-5 justify-content-center">
+             <div class="form-group col-12  col-lg-10 mb-5 mb-md-0" >
+        <label for="email"class="required" >Email <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please enter a unique email. You&#039;ll use this when you log in and if you ever need to reset your password."></i></label>
+      <input type="email" th:field="*{email}" class="form-control borders" placeholder="e.g. johndoe@mail.com" id="email"  >
+    <div  id="emailValidate" class="invalid-tooltip w-100 text-center">
+      Please enter a valid email address
+        </div>
+         
+    </div>
+ 
+     </div>
+              
+           
+     <div class="form-row w-100 mt-md-5 pb-5 justify-content-lg-around justify-content-md-between">
+     <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+        <label for="pass1"  class="required">Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please enter a valid password meeting the following criteria: The password must be a minimum of 8 characters long, and it must contain at least one upper-case letter ([A-Z]), one lower-case letter ([a-z]), one number ([0-9]), and one special character ( !&quot;#$%&'()*+,-./:;<=>?@[\]^_`{|}~)."></i></label>
+      <input type="password" th:field="*{password}" class="form-control borders" placeholder="8 Characters Minimum" id="pass1"  >
+          <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid password
+        </div>
+    </div>
+    <div class="form-group col-12 col-md-5 col-lg-4 mb-5 mb-md-0">
+        <label for="pass2" class="required">Retype Password <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Must not be blank. Please reenter your password. Passwords must be matching."></i></label>
+      <input type="password" class="form-control borders" placeholder="Confirm Password" id="pass2"  data-toggle="tooltip" data-placement="bottom" >
+         <div class="invalid-tooltip w-100 text-center">
+        Please make sure the passwords are matching
+        </div>
+    </div>
+     
+           </div>
+                 </div></div>
+           
+    <!-- Shipping info row -->
+    
+           <div id="shipping" class="card mt-5">
+      <div class="card-header">
+           <a class="card-link" data-toggle="collapse" href="#shipinfobody" data-placement="top" title="If you wish to add your shipping information, click the ">
+           <div class="form-row justify-content-center w-100">
+               <div class="form-group col-12">
+                   <span class="row w-100 justify-content-center"><h3 class="ml-auto">Shipping Details</h3><i class="ml-auto fas fa-caret-down fa-2x ml-auto text-dark"></i></span>
+                   <span class="row w-100 justify-content-center">  <i class="far fa-question-circle text-dark material-tooltip-smaller" data-toggle="tooltip" data-placement="bottom" title="If you wish to update your shipping details here you must fill out every field in this section appropriately. If you wish to proceed and update your shipping information another time, then leave this section blank."></i></span>
+                   <span class="row w-100 ml-auto mr-auto"><hr></span>
+               </div></div>  
+          </a>
+               </div>
+        <div id="shipinfobody" class="collapse" data-parent="#shipping">
+        <div class="card-body">
+       <div class="form-row w-100 justify-content-center">
+             <div class="form-group col-12  col-lg-10 mb-5 mb-md-0">
+        <label for="add">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid street address for your shipping address."></i></label>
+      <input type="text" th:field="*{address}" class="form-control borders justify-content-left" placeholder="e.g. 123 Main St." id="add"> 
+     <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid street address
+        </div>
+    </div>
+  </div>
+     <div class="form-row w-100 mt-md-5 pb-5 justify-content-center">
+         <div class=" w-100 col-12 col-lg-10 px-0">
+        <div class="row w-100 justify-content-between m-0">
+    <div class="w-100 form-group col-12 col-md pl-md-1 mb-5 mb-md-0 px-1">
+      <label for="city">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid city for your shipping address. Leave blank if not applicable."></i></label>
+      <input type="text" th:field="*{city}" class="form-control borders" id="city" placeholder="e.g. Atlanta">
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid city
+        </div>
+    </div>
+    <div class="w-100 form-group col-12 col-sm-7 col-md mb-5 mb-md-0 px-3">
+      <label for="state">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please select a valid state for your shipping address. Select 'Select a State' if not applicable"></i></label>
+      <select id="state" th:field="*{state}" class="form-control custom-select borders" title="Choose a State"  >
+           <option th:value="blank">Select a State</option>
+          <option th:value="none">--</option>
+       <option th:value="Alabama">Alabama</option><option th:value="Alaska">Alaska</option><option th:value="Arizona">Arizona</option><option th:value="Arkansas">Arkansas</option><option th:value="California">California</option><option th:value="Colorado">Colorado</option><option th:value="Connecticut">Connecticut</option><option th:value="Delaware">Delaware</option><option th:value="DistrictofColumbia">District of Columbia</option><option th:value="Florida">Florida</option><option th:value="Georgia">Georgia</option><option th:value="Hawaii">Hawaii</option><option th:value="Idaho">Idaho</option><option th:value="Illinois">Illinois</option><option th:value="Indiana">Indiana</option><option th:value="Iowa">Iowa</option><option th:value="Kansas">Kansas</option><option th:value="Kentucky">Kentucky</option><option th:value="Louisiana">Louisiana</option><option th:value="Maine">Maine</option><option th:value="Maryland">Maryland</option><option th:value="Massachusetts">Massachusetts</option><option th:value="Michigan">Michigan</option><option th:value="Minnesota">Minnesota</option><option th:value="Mississippi">Mississippi</option><option th:value="Missouri">Missouri</option><option th:value="Montana">Montana</option><option th:value="Nebraska">Nebraska</option><option th:value="Nevada">Nevada</option><option th:value="NewHampshire">New Hampshire</option><option th:value="NewJersey">New Jersey</option><option th:value="NewMexico">New Mexico</option><option th:value="NewYork">New York</option><option th:value="NorthCarolina">North Carolina</option><option th:value="NorthDakota">North Dakota</option><option th:value="NorthernMarianasIslands">Northern Marianas Islands</option><option th:value="Ohio">Ohio</option><option th:value="Oklahoma">Oklahoma</option><option th:value="Oregon">Oregon</option><option th:value="Pennsylvania">Pennsylvania</option><option th:value="PuertoRico">Puerto Rico</option><option th:value="RhodeIsland">Rhode Island</option><option th:value="SouthCarolina">South Carolina</option><option th:value="SouthDakota">South Dakota</option><option th:value="Tennessee">Tennessee</option><option th:value="Texas">Texas</option><option th:value="Utah">Utah</option><option th:value="Vermont">Vermont</option><option th:value="Virginia">Virginia</option><option th:value="VirginIslands">Virgin Islands</option><option th:value="Washington">Washington</option><option th:value="WestVirginia">West Virginia</option><option th:value="Wisconsin">Wisconsin</option><option th:value="Wyoming">Wyoming</option>
+      </select>
+       
+        <div id="st" class="invalid-tooltip w-100 text-center">
+        Please select a state
+    </div>
+            </div>
+    <div class="w-100 form-group col-12 col-sm-5 col-md pr-md-1 mb-5 mb-md-0 px-1">
+      <label for="zip">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title=" Please enter a valid zip code for your shipping address. Leave blank if not applicable."></i></label>
+      <input type="tel" th:field="*{zip}" class="form-control borders" id="zip" placeholder="e.g. 30022">
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid zip code
+        </div>
+    </div>
+         </div>  
+  </div>
+            </div></div></div></div>
+           
+                <!--Billing heading row -->
+          <div id="billing" class="card my-5">
+      <div class="card-header">
+           <a class="card-link" data-toggle="collapse" href="#paymentinfobody">
+           <div class="form-row justify-content-center w-100">
+               <div class="form-group col-12">
+                   
+                  <span class="row w-100 justify-content-center"><h3 class="ml-auto"> Billing Details</h3> <i class="ml-auto fas fa-caret-down fa-2x ml-auto text-dark"></i></span>
+                   <span class="row w-100 justify-content-center">  <i class="far fa-question-circle text-dark material-tooltip-smaller" data-toggle="tooltip" data-placement="bottom" title="If you wish to update your billing details here you must fill out every field in this section appropriately. If you wish to proceed and update your billing information another time, then leave this section blank."></i></span>
+                   <span class="row w-100 justify-content-center ml-auto mr-auto"><hr></span>
+               </div></div> 
+          </a></div>
+              <div id="paymentinfobody" class="collapse" data-parent="#billing">
+        <div class="card-body">
+               <!--card no and name row -->
+            <div id="cardGUI" class="form-row justify-content-center w-100 card-wrapper mb-5"></div>
+               <div class="form-row w-100 justify-content-center">
+         <div class=" w-100 col-12 col-lg-10 px-0">
+        <div class="row w-100 justify-content-between m-0">
+                    
+                      <div class="form-group col-12 col-md-4 px-1 mb-5 mb-md-0">
+                    
+    <label for="cardName" >Name on Card <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the full name listed on your credit/debit card."></i></label>
+      <input type="text" th:field="*{cardName}" class="form-control borders"  id="cardName" placeholder="e.g. John Doe">
+    </div>
+    <div class="cardno form-group col-12 col-md-6 mb-5 mb-md-0 px-1">
+    <label for="card">Card Number <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the valid digits number on your American Express, Discover, Mastercard, or Visa credit/debit card."></i></label>
+ <input class="form-control borders" th:field="*{cardNumber}" type="tel" id="card" pattern=""placeholder="e.g. 1234 5678 9012 3456">
+        <div class="invalid-tooltip w-100 text-center">
+        Please make sure your are entering a valid American Express, Discover, Mastercard, or Visa credit/debit card
+      </div>
+                     </div>
+                          </div></div></div>
+            
+            
+                    <div class="form-row w-100 justify-content-center mb-5 pb-5">
+         <div class=" w-100 col-12 col-lg-10 px-0">
+        <div class="row w-100 justify-content-between m-0">
+            <div class="col-12 col-md-4 px-1 "></div>
+          <div class=" form-group col-12 col-md-6 mb-3 mb-md-0 mt-md-5 px-1">
+               <div class="row w-100 justify-content-between m-0">
+                     <div class="form-group col mb-3 mb-md-0 px-1">
+      <label for="cv">CVV <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the 3 or 4 digit security code at the back of your credit/debit card."></i></label>
+     <input class="form-control borders" th:field="*{cvv}" type="tel" id="cv" placeholder="e.g. 000">
+                         <div class="invalid-tooltip w-100 text-center">
+                         Please enter a valid 3 or 4 digit security code on the back of your card
+                         </div>
+    </div>
+        <div class="form-group mb-5 mb-md-0 col px-1">
+    <label for="exp">Exp. Date <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter the expiration date (usually placed next to 'Good Thru' or 'Valid Thru') listed on your credit/debit card."></i></label>
+            <input class="form-control borders text-center" th:field="*{cardExp}" type="tel"  id="exp"  data-mask="00 / 00" placeholder="MM/YY"> 
+            <div class="invalid-tooltip w-100 text-center">
+    Please make sure your are entering a valid expiration date from your credit/debit card
+      </div>
+                     </div>
+		 <div class="form-group">
+		<select th:field="*{cardType}" class="form-control selectpicker" id="bank" >
+            <option th:value="none"></option>
+            <option th:value="AmericanExpress"></option>
+            <option th:value="Discover"></option>
+            <option th:value="Mastercard"></option>
+            <option th:value="Visa"></option>
+            </select>
+              </div>
+				</div>
+            </div></div></div></div>
+           
+
+       
+    <div class="form-row w-100 justify-content-center mt-5">
+             <div class="form-group col-12  col-lg-10 mb-5 mb-md-0">
+        <label for="addbill">Address <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid street address for your billing address."></i></label>
+      <input type="text" th:field="*{addressBill}" class="form-control borders justify-content-left" placeholder="e.g. 123 Main St." id="addbill">
+                 <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid street address
+        </div>
+    </div>
+  </div>
+     <div class="form-row w-100 mt-md-5 pb-5 justify-content-center">
+         <div class=" w-100 col-12 col-lg-10 px-0">
+        <div class="row w-100 justify-content-between m-0">
+    <div class="w-100 form-group col-12 col-md pl-md-1 mb-5 mb-md-0 px-1 ">
+      <label for="citybill">City <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please enter a valid city for your billing address. Leave blank if not applicable."></i></label>
+      <input type="text" th:field="*{cityBill}" class="form-control borders" id="citybill" placeholder="e.g. Atlanta">
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid city
+        </div>
+    </div>
+    <div class=" form-group col-12 col-sm-7 col-md mb-5 mb-md-0">
+      <label for="statebill">State <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title="Please select a state for your billing address. Select 'Select a State' if not applicable."></i></label>
+      <select id="statebill" th:field="*{stateBill}" class="form-control borders custom-select" title="Choose a State" >
+           <option th:value="blank">Select a State</option>
+          <option th:value="none">--</option>
+       <option th:value="Alabama">Alabama</option><option th:value="Alaska">Alaska</option><option th:value="Arizona">Arizona</option><option th:value="Arkansas">Arkansas</option><option th:value="California">California</option><option th:value="Colorado">Colorado</option><option th:value="Connecticut">Connecticut</option><option th:value="Delaware">Delaware</option><option th:value="DistrictofColumbia">District of Columbia</option><option th:value="Florida">Florida</option><option th:value="Georgia">Georgia</option><option th:value="Hawaii">Hawaii</option><option th:value="Idaho">Idaho</option><option th:value="Illinois">Illinois</option><option th:value="Indiana">Indiana</option><option th:value="Iowa">Iowa</option><option th:value="Kansas">Kansas</option><option th:value="Kentucky">Kentucky</option><option th:value="Louisiana">Louisiana</option><option th:value="Maine">Maine</option><option th:value="Maryland">Maryland</option><option th:value="Massachusetts">Massachusetts</option><option th:value="Michigan">Michigan</option><option th:value="Minnesota">Minnesota</option><option th:value="Mississippi">Mississippi</option><option th:value="Missouri">Missouri</option><option th:value="Montana">Montana</option><option th:value="Nebraska">Nebraska</option><option th:value="Nevada">Nevada</option><option th:value="NewHampshire">New Hampshire</option><option th:value="NewJersey">New Jersey</option><option th:value="NewMexico">New Mexico</option><option th:value="NewYork">New York</option><option th:value="NorthCarolina">North Carolina</option><option th:value="NorthDakota">North Dakota</option><option th:value="NorthernMarianasIslands">Northern Marianas Islands</option><option th:value="Ohio">Ohio</option><option th:value="Oklahoma">Oklahoma</option><option th:value="Oregon">Oregon</option><option th:value="Pennsylvania">Pennsylvania</option><option th:value="PuertoRico">Puerto Rico</option><option th:value="RhodeIsland">Rhode Island</option><option th:value="SouthCarolina">South Carolina</option><option th:value="SouthDakota">South Dakota</option><option th:value="Tennessee">Tennessee</option><option th:value="Texas">Texas</option><option th:value="Utah">Utah</option><option th:value="Vermont">Vermont</option><option th:value="Virginia">Virginia</option><option th:value="VirginIslands">Virgin Islands</option><option th:value="Washington">Washington</option><option th:value="WestVirginia">West Virginia</option><option th:value="Wisconsin">Wisconsin</option><option th:value="Wyoming">Wyoming</option>
+      </select>
+        <div id="stb" class="invalid-tooltip w-100">
+        Please select a state
+        </div>
+    </div>
+    <div class="w-100 form-group col-12 col-sm-5 col-md pr-md-1 mb-5 mb-md-0 px-1 ">
+      <label for="zipbill">Zip <i class="far fa-question-circle material-tooltip-smaller" data-toggle="tooltip" data-placement="right"  title=" Please enter a valid zip code for your biiling address. Leave blank if not applicable."></i></label>
+      <input type="tel" th:field="*{zipBill}" class="form-control borders" id="zipbill" placeholder="e.g. 30022">
+        <div class="invalid-tooltip w-100 text-center">
+        Please enter a valid zip code
+        </div>
+    </div>
+         </div>  
+  </div>
+            </div>
+                  </div></div></div>
+           
+                <div class="form-row mt-3 " >
+    <div class="form-group col-12">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+         
+      <label  for="invalidCheck">
+          Agree to the <span class="text-primary">Terms and Conditions</span><span class="text-danger"> *</span>
+      </label>
+         <div class="invalid-tooltip w-100 ">
+        You must Agree to the Terms and Condition
+        </div>
+   
+  </div>
+                </div>
+      <div class="form-row mt-5">
+    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <button class="btn btn-primary btn-lg" type="submit" >Create Account</button>
+                </div>
+                </div>
+  </form>
+  <iframe  id="frame" style="height:300px;" name="form" onload="frameLoad(this)" ></iframe>
+            </div> 
+  
+</div>
+       </div>
+             
+             </div>      
+             
+             
+             
+             
+             
+             
+          <div class="col-12 py-md-5 py-3" ></div>
+
+        
+            
+<div id="footer" style="background-color: #f2f2f2; "class="col-12 align-self-end py-md-2 py-1">
+
+<div class="col-12 footeralign text-center">
+<i style="color:#3b5998; padding-right: 35px;"class="fab fa-facebook-square fa-2x"></i>
+<i style="color:#38A1F3; padding-right: 35px;"class="fab fa-twitter-square fa-2x"></i>
+<i style="color:#fb3958"class="fab fa-instagram-square fa-2x"></i>
+</div>
+
+<div id="bottom" class="col-12 footeralign text-center ">
+ © 2020 Copyright: BookIt.com
+</div>
+
+</div>
+
+
+         </div>  
+             
+             
+             
+             
+         
+         <!-- Signup Confirmation Modal--> 
+      <div class="modal fade" id="signupConfirmation" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+             <h5 class='col-12 modal-title text-center' style="color: #4BB543;">
+              Registration is Complete  <i class="far fa-check-square"></i>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </h5>
+        </div>
+        <div class="modal-body">
+          Congratulations on successfully creating an account with BookIt! To login into your new account please follow the account activation instructions that will be sent to your email! We are happy to have you part of BookIt family!
+        </div>
+        <div class="modal-footer" style="text-align:center;" >
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+          <!-- Advance Search Modal--> 
+           <div class="modal fade"  id="filterSearch" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+             <h5 class='col-12 modal-title text-center'>
+              Advanced Search  <i class="fas fa-search-plus"></i>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </h5>
+        </div>
+        <div class="modal-body justify-content-center">
+             <div class="container-fluid">
+                 <form id="apply" onsubmit="document.body.style.cursor='wait'; return true;"  action="https://www.adweek.com/digital/news-sites-top-list-slowest-loading-web-pages-161619/">
+                     <div class="row py-5">
+                         <div  class='col-1'></div>
+                     <div  class='col-10'>
+                         
+                         <input class="form-control" type="text" placeholder="Keyword(s)">
+
+
+                     </div>
+                         <div  class='col-1'></div>
+                 </div>
+                     
+                     <div class="row py-1"></div> 
+                      <div class="row py-1"></div> 
+                     
+                           <div class="row py-5">
+                     <div  class='col-1'></div>
+                     <div  class='col-10'>
+                         <input class="form-control" type="text" placeholder="Author(s)" >
+                        
+                     </div>
+                        <div  class='col-1'></div>        
+                 </div>
+                     
+                   <div class="row py-1"></div> 
+                      <div class="row py-1"></div> 
+                     
+                     <div class="row py-5">
+                         <div  class='col-1'></div>
+                     <div  class='col-10'>
+                         <input class="form-control" type="text" placeholder="Title">
+                     </div>
+                        <div  class='col-1'></div>    
+                 </div>
+                     
+                     <div class="row py-1"></div> 
+                      <div class="row py-1"></div>
+                     
+                  <div class="row py-5">
+                  
+                        <div  class='col-1'></div>
+                     <div  class='col-10'>
+                         <input class="form-control" type="text" placeholder="ISBN(s)">
+                     </div>
+                        <div  class='col-1'></div>   
+                 </div>
+                     
+                    <div class="row py-1"></div> 
+                      <div class="row py-1"></div>
+                     
+                    <div class="row py-5">
+                     <div  class='col-1'></div>
+                     <div  class='col-10'>
+                         <input class="form-control" type="text" placeholder="Publisher(s)" >
+                     </div>
+                        <div  class='col-1'></div>   
+                 </div>
+                     
+                     <div class="row py-1"></div> 
+                      <div class="row py-1"></div>
+                     
+                      <div class="row py-5">
+                          <div  class='col-1'></div>
+                     <div  class='col-10'>
+                          <input class="form-control" type="number" placeholder="Publication Year" min="0" max="2020" >
+                     </div>
+                        <div  class='col-1'></div>   
+                    
+                 </div>
+                     
+                     <div class="row py-1"></div>
+                     
+                     
+                 <div class="row py-5">
+                     <div class='col-1'></div>
+                     <div class='col-10'>
+                         <div class="form-group">
+                         <select class="selectpicker form-control" multiple data-live-search="true" title="Platform(s)"  data-size="3">
+ <option value="">All Platforms</option>
+                              <option value="2656022011">Paperback</option>
+                              <option value="2656020011">Hardcover</option>
+                              <option value="618073011">Kindle Edition</option>
+			      <option value="1240885011">Audible Audio Edition</option>
+                              <option value="699209011">HTML</option>
+                              <option value="699208011">PDF</option>
+                              <option value="618075011">Audio CD</option>
+                              <option value="2656019011">Board Book</option>
+                              <option value="2682078011">Audio Cassette</option>
+                              <option value="618079011">Calendar</option>
+                              <option value="2656023011">School Binding</option>
+                              <option value="2682079011">MP3 CD</option>
+                              <option value="618075011">Audiobooks</option>
+                              <option value="618083011">Printed Books</option>
+</select>
+                         </div>
+                     </div>
+                     <div class='col-1'></div>
+                 </div>
+                          <div class="row py-5">
+                     <div class='col-1'></div>
+                     <div class='col-10'>
+                         <div class="form-group">
+                         <select class="selectpicker form-control"  multiple data-live-search="true" title="Subject(s)"  data-size="3">
+                                                 <option value="">All Subjects</option>
+
+                              <option value="1">Arts &amp; Photography</option>
+
+                              <option value="45">Bargain Books</option>
+
+                              <option value="2">Biographies &amp; Memoirs</option>
+
+                              <option value="3">Business &amp; Investing</option>
+
+                              <option value="4">Children's Books</option>
+
+                              <option value="12290">Christian Book &amp; Bibles</option>
+
+                              <option value="4366">Comics &amp; Graphic Novels</option>
+
+                              <option value="6">Cookbooks, Food &amp; Wine</option>
+
+                              <option value="48">Crafts, Hobbies &amp; Home</option>
+
+                              <option value="5">Computers &amp; Technology</option>
+
+                              <option value="21">Education &amp; Reference</option>
+
+                              <option value="301889">Gay &amp; Lesbian</option>
+
+                              <option value="10">Health, Fitness &amp; Dieting</option>
+
+                              <option value="9">History</option>
+
+                              <option value="86">Humor &amp; Entertainment</option>
+
+                              <option value="10777">Law</option>
+
+                              <option value="17">Literature &amp; Fiction</option>
+
+                              <option value="13996">Medicine</option>
+
+                              <option value="18">Mystery, Thriller &amp; Suspense</option>
+
+                              <option value="20">Parenting &amp; Relationships</option>
+
+                              <option value="3377866011">Politics &amp; Social Sciences</option>
+
+                              <option value="173507">Professional &amp; Technical Books</option>
+
+                              <option value="22">Religion &amp; Spirituality</option>
+
+                              <option value="23">Romance</option>
+
+                              <option value="75">Science &amp; Math</option>
+
+                              <option value="25">Science Fiction &amp; Fantasy</option>
+
+                              <option value="26">Sports &amp; Outdoors</option>
+
+                              <option value="28">Teens</option>
+
+                              <option value="27">Travel</option>
+</select>
+
+                         </div>   
+                     </div>
+                      <div class='col-1'></div>   
+                         
+                 </div>
+                     
+                     <div class="row py-5">
+                     <div class='col-1'></div>
+                     <div class='col-10'>
+                         <div class="form-group">
+                         <select class="selectpicker form-control" multiple data-live-search="true" title="Language(s)" data-size="3">
+                              <option value="">All Languages</option>
+                              <option value="Arabic">Arabic</option>
+                              <option value="English">English</option>
+                              <option value="French">French</option>
+                              <option value="German">German</option>
+                              <option value="Spanish">Spanish</option>
+</select>
+                         </div>
+                     </div>
+                         <div class='col-1'></div>
+                 </div> 
+                  <div class="row py-5">
+                      <div class='col-1'></div>
+                     <div class='col-10'>
+                         <div class="form-group">
+                         <select class="selectpicker form-control" multiple  title="Condition(s)"  data-live-search="true" data-size="3">
+<option value="">All</option>
+  <option>New</option>
+  <option>Used</option>
+  <option>Like New</option>
+</select>
+                         </div>
+                     </div>
+                 </div>
+                 <div class='col-1'></div>
+                     <div class="row my-5"></div>  
+                 </form>
+                  
+                     </div>
+           
+        </div>
+       
+        <div class="modal-footer text-center row justify-content-md-between">
+           
+            <div class="col-12 col-md-4">
+          <button  type="submit" form="apply"  class="btn btn-success w-100" >Search</button>
+            </div>
+            
+           
+            
+            <div class="col-12 col-md-4">
+             <button type="button" class="btn  btn-danger w-100" data-dismiss="modal">Close</button>
+            </div>
+        
+      </div>
+      
+    </div>
+  </div>
+        
+        
+        
+        
+        
+        
+         <div class="modal fade" id="editProfile" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+             <h5 class='col-12 modal-title text-center' style="color: black;">
+             Edit Profile  <i class="fas fa-user-edit"></i>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         </h5>
+        </div>
+        <div class="modal-body">
+         
+        </div>
+        <div class="modal-footer" style="text-align:center;" >
+          <button id="editProfileBtn"  type="button"  style="margin:auto;display:block; background-color: red; color: white;"  data-dismiss="modal" class="btn btn-default" >Login</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>    
+        </div> 
+             <script src="https://cdn.jsdelivr.net/npm/jquery-mask-plugin@1.14.16/dist/jquery.mask.min.js"></script>
+          <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   
+        <!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+        
+    <script src="js/bootnavbar.js" ></script>
+       
+<script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js" ></script>
+             
+           <script src="https://cdn.jsdelivr.net/npm/places.js@1.18.1"></script>
+<script>
+(function() {
+  var placesAutocomplete = places({
+    appId: 'plEFAQ68CBHC',
+    apiKey: 'c8ee1c164bc13bea84f74281b7575ee5',
+    container: document.querySelector('#add'),
+    templates: {
+      value: function(suggestion) {
+        return suggestion.name;
+      }
+    }
+  }).configure({
+    type: 'address'
+  });
+  placesAutocomplete.on('change', function resultSelected(e) {
+     $('#state').selectpicker('val', e.suggestion.administrative || '' );
+    document.getElementById('city').value = e.suggestion.city || '';
+    document.getElementById('zip').value= e.suggestion.postcode || '';
+  });
+})();
+
+    
+(function() {
+  var placesAutocomplete = places({
+    appId: 'plEFAQ68CBHC',
+    apiKey: 'c8ee1c164bc13bea84f74281b7575ee5',
+    container: document.querySelector('#addbill'),
+    templates: {
+      value: function(suggestion) {
+        return suggestion.name;
+      }
+    }
+  }).configure({
+    type: 'address'
+  });
+  placesAutocomplete.on('change', function resultSelected(e) {
+     $('#statebill').selectpicker('val', e.suggestion.administrative || '' );
+    document.getElementById('citybill').value = e.suggestion.city || '';
+    document.getElementById('zipbill').value= e.suggestion.postcode || '';
+  });
+})();
+</script>  
+
+             
+    <script type="text/javascript"> 
+    var emailcount = 0;
+    $('#bank').selectpicker('hide');
+  
+   
+   
+        
+
+        
+   $('#fName').keyup(function(){
+       var first = document.getElementById("fName").value; 
+       if (first.length == 0 )
+           (document.getElementById("fName")).classList.add("is-invalid");
+       else
+           (document.getElementById("fName")).classList.remove("is-invalid"); 
+
+   });
+   $('#lName').keyup(function(){
+       var first = document.getElementById("lName").value; 
+       if (first.length == 0 )
+           (document.getElementById("lName")).classList.add("is-invalid");
+       else
+           (document.getElementById("lName")).classList.remove("is-invalid"); 
+
+   });
+    $('#email').keyup(function(){
+       var first = document.getElementById("email").value; 
+       if (first.length == 0 ){
+    	   document.getElementById("emailValidate").innerHTML = "Please enter a valid email address";
+           (document.getElementById("email")).classList.add("is-invalid");
+       }
+        else if (((new RegExp('[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{3}')).test(first)) == false){
+        	document.getElementById("emailValidate").innerHTML = "Please enter a valid email address";
+           (document.getElementById("email")).classList.add("is-invalid");
+        }
+       else
+           (document.getElementById("email")).classList.remove("is-invalid"); 
+
+   });
+      $('#pass1').keyup(function(){
+       var first = document.getElementById("pass1").value; 
+       if (first.length == 0 )
+           (document.getElementById("pass1")).classList.add("is-invalid");
+       else if (((new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).*$')).test(first)) == false)
+           (document.getElementById("pass1")).classList.add("is-invalid");
+       else
+           (document.getElementById("pass1")).classList.remove("is-invalid"); 
+       
+       if ((document.getElementById("pass2").value) != first)
+           (document.getElementById("pass2")).classList.add("is-invalid");
+       else
+           (document.getElementById("pass2")).classList.remove("is-invalid"); 
+
+   });
+  $('#pass2').keyup(function(){
+       var first = document.getElementById("pass2").value; 
+       if (first.length == 0 )
+           (document.getElementById("pass2")).classList.add("is-invalid");
+       else
+           (document.getElementById("pass2")).classList.remove("is-invalid"); 
+      
+      
+      
+      if ((document.getElementById("pass1").value) != first)
+           (document.getElementById("pass2")).classList.add("is-invalid");
+       else
+           (document.getElementById("pass2")).classList.remove("is-invalid"); 
+
+   });
+
+  
+    $('#cv').keyup(function(){
+       var cv = document.getElementById("cv").value;  
+          if(cv.length == 0)
+            (document.getElementById("cv")).classList.remove("is-invalid"); 
+        else if($("#bank").val() == "AmericanExpress" && (cv.length == 4))
+            (document.getElementById("cv")).classList.remove("is-invalid");
+        
+        else if(($("#bank").val() == "Discover" || $("#bank").val() == "Mastercard" || $("#bank").val() == "Visa") && (cv.length >= 3))
+            (document.getElementById("cv")).classList.remove("is-invalid"); 
+         
+            
+         else
+             (document.getElementById("cv")).classList.add("is-invalid"); 
+            
+ 
+    });
+         
+    
+
+   
+	 
+$('#exp').change(function(){
+    var exp = document.getElementById("exp").value;  
+     
+if(exp.length == 7){
+
+    var splitDate = exp.split("/");
+     
+    splitDate[0] =  splitDate[0].replace(/ /g, "");
+    splitDate[1] =  splitDate[1].replace(/ /g, "");
+
+    var cardDate = "20"+splitDate[1]+"-"+splitDate[0];
+    var date = new Date(cardDate).getTime();
+    
+    if(date > (new Date().getTime())){
+       (document.getElementById("exp")).classList.remove("is-invalid");
+    }
+    else{
+       (document.getElementById("exp")).classList.add("is-invalid");  
+    }
+}
+    else{
+        
+       if(exp.length != 0)
+            (document.getElementById("exp")).classList.add("is-invalid"); 
+        else
+            (document.getElementById("exp")).classList.remove("is-invalid"); 
+    }
+});
+
+        
+$('#card').change(function(){
+   
+    var card = document.getElementById("card").value;
+   
+    if(card.length == 0){
+         $('#bank').selectpicker('val', "none");
+        (document.getElementById("card")).classList.remove("is-invalid");
+    }
+    else if((new RegExp('^(34|37)[0-9 ]{15}$')).test(card))
+    $('#bank').selectpicker('val', "AmericanExpress");
+    else if ((new RegExp('^(4)([0-9 ]{15}|[0-9 ]{18}|[0-9 ]{22})$')).test(card))
+         $('#bank').selectpicker('val', "Visa");
+    
+     else if (((new RegExp('^(5[1-5]|677189)|^(222[1-9]|2[3-6][0-9][0-9]|27[0-1][0-9]|2720)')).test(card)) && card.length == 19)
+           $('#bank').selectpicker('val', "Mastercard");
+    else if(((new RegExp('^(6011|65|64[4-9]|622)')).test(card))&& card.length == 19)
+         $('#bank').selectpicker('val', "Discover");
+    else
+        $('#bank').selectpicker('val', "none");
+    
+     if($("#bank").val() == "none" && card.length != 0)
+        (document.getElementById("card")).classList.add("is-invalid"); 
+    else
+        (document.getElementById("card")).classList.remove("is-invalid");
+        
+   });
+        
+    
+        
+        
+    
+        
+        
+        
+        
+  
+   $('#invalidCheck').click(function(){
+       (document.getElementById("invalidCheck")).classList.remove("is-invalid");
+   });
+        
+        
+        
+        
+$(document).ready(function() {
+   
+  $('#register').on('submit', function(e){
+	 
+	var trueload = false;
+      var validationcount = 0;
+      var required = false;
+     $("#user input[type=text]").each(function() {
+            if((this.value).length == 0) {
+              this.classList.add("is-invalid");
+              required = true;
+            }
+         else{
+            this.classList.remove("is-invalid"); 
+         }
+
+        });
+       $("#user input[type=email]").each(function() {
+            if((this.value).length == 0) {
+              this.classList.add("is-invalid");
+              required = true;
+            }
+         else{
+            this.classList.remove("is-invalid"); 
+         }
+
+        });
+       $("#user input[type=password]").each(function() {
+            if((this.value).length == 0) {
+              this.classList.add("is-invalid");
+              required = true;
+            }
+         else{
+            this.classList.remove("is-invalid"); 
+         }
+
+        });
+       if ( document.getElementById("invalidCheck").checked == false){
+            (document.getElementById("invalidCheck")).classList.add("is-invalid");
+              required = true;
+       
+       }
+      if(required == true){
+          
+      e.preventDefault();
+          $('#register input').each(function(){
+               if(this.className.includes('is-invalid')){
+                  this.focus();
+                  return false;
+              }
+             
+             
+ 
+});
+          
+      }
+      
+      else{
+          var complete = false;
+          var billingval = 0;
+          var ship = false;
+          var bill = false;
+          var shippingval = 0;
+          (document.getElementById("statebill")).classList.remove("is-invalid");
+     
+          
+          $("#billing input").each(function() {
+                  this.classList.remove("is-invalid");
+               });
+          if($("#statebill").val() != "blank")
+              billingval++;
+          $("#billing input").each(function() {
+        if((this.value).length > 0)
+            billingval++;
+    });
+          if(billingval > 0)
+          {
+              $("#billing input").each(function() {
+                if((this.value).length == 0)
+                this.classList.add("is-invalid");
+              });
+              if($("#statebill").val() == "blank"){
+                  (document.getElementById("statebill")).classList.add("is-invalid");
+                 
+              }
+               $("#billing .is-invalid").each(function() {
+            	  
+                   (document.getElementById("statebill")).classList.add("is-invalid");
+                  this.focus();
+                  return false;
+               });
+          }
+          
+          
+          
+          
+          
+
+            (document.getElementById("state")).classList.remove("is-invalid");
+          (document.getElementById("st")).classList.remove("d-block");
+              $("#shipping .is-invalid").each(function() {
+                  this.classList.remove("is-invalid");
+               });
+          if($("#state").val() != "blank")
+              shippingval++;
+          $("#shipping input").each(function() {
+        if((this.value).length > 0)
+            shippingval++;
+    });
+          if(shippingval > 0){
+              $("#shipping input").each(function() {
+                if((this.value).length == 0)
+                this.classList.add("is-invalid");
+              });
+            if($("#state").val() == "blank"){
+                 (document.getElementById("state")).classList.add("is-invalid");
+           
+            }
+               $("#shipping .is-invalid").each(function() {
+            	   (document.getElementById("state")).classList.add("is-invalid");
+                  this.focus();
+                  return false;
+               });
+          } 
+          
+          if(shippingval == 4 || shippingval == 0)
+              ship = true;
+           if(billingval == 8 || billingval == 0)
+              bill = true;
+          if(bill == true && ship == true){
+        	 bill = true;
+          }
+          else
+        	  e.preventDefault();
+         
+          
+     
+     
+      }
+});
+  
+$('#filterSearch').on('shown.bs.modal', function () {
+  $(this).find('input:first').trigger('focus')
+})
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+});
+  $("#fName").focus();
+ 
+    </script>
+    <script>
+function frameLoad() {
+	 
+	 var vals = $('#frame').contents().find('#refresh').text();
+	  var iVals = vals.split(",");
+	  if (iVals[1].includes('@')){
+		  document.getElementById("emailValidate").innerHTML  = "The email you have entered is already registered with us. Please enter a valid email address";
+		  (document.getElementById("email")).classList.add("is-invalid");	
+		  document.getElementById("email").focus();
+	  }
+	  else{
+		 trueload = true;
+		  $('#signupConfirmation').modal('show');
+		 
+
+		  
+	  }
+
+};
+if(trueload == true){
+	$('#signupConfirmation').modal('show');
+	trueload - false;
+}
+</script>
+        </div>
+<script  th:src="@{/plugins/card.js}"></script>
+
+    <script>
+    var card = new Card({
+    // a selector or DOM element for the form where users will
+    // be entering their information
+    form: '#register', // *required*
+    // a selector or DOM element for the container
+    // where you want the card to appear
+    container: '.card-wrapper', // *required*
+
+    formSelectors: {
+        numberInput: 'input#card', // optional — default input[name="number"]
+        expiryInput: 'input#exp', // optional — default input[name="expiry"]
+        cvcInput: 'input#cv', // optional — default input[name="cvc"]
+        nameInput: 'input#cardName' // optional - defaults input[name="name"]
+    },
+
+     width:250,
+    formatting: true, // optional - default true
+
+    // Strings for translation - optional
+    messages: {
+        validDate: 'valid\ndate', // optional - default 'valid\nthru'
+        monthYear: 'mm/yyyy', // optional - default 'month/year'
+    },
+
+    // Default placeholders for rendered fields - optional
+    placeholders: {
+        card: '•••• •••• •••• ••••',
+        cardName: 'Full Name',
+        exp: '••/••',
+        cv: '•••'
+    },
+
+    masks: {
+        cardNumber: '•' // optional - mask card number
+    },
+
+    // if true, will log helpful messages for setting up Card
+    debug: false // optional - default false
+});
+    </script>    
+</body></html>
